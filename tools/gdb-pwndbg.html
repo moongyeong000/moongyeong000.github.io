@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gdb-pwndbg</title>
+  <link rel="stylesheet" href="../main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>gdb-pwndbg</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>기능 개요</h2>
+      <p><code>gdb-pwndbg</code>는 GDB를 위한 확장 플러그인으로, 바이너리 익스플로잇 분석을 보다 직관적이고 강력하게 만들어 줍니다. 레지스터, 스택, 힙 등의 상태를 실시간으로 보기 좋게 출력해 줍니다.</p>
+    </section>
+
+    <section>
+      <h2>사용 방법</h2>
+      <ul>
+        <li>gdb에 pwndbg를 설치: <code>git clone https://github.com/pwndbg/pwndbg</code> 후 <code>./setup.sh</code></li>
+        <li>익스플로잇 대상 바이너리를 gdb로 실행: <code>gdb ./vulnerable</code></li>
+        <li>디버깅 중 스택 프레임, 레지스터, 메모리 등을 시각적으로 확인 가능</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>활용 예시</h2>
+      <ul>
+        <li>스택 버퍼 오버플로우 위치 및 크기 파악</li>
+        <li>RET 주소 덮어쓰기 위치 분석</li>
+        <li>힙 구조 분석 및 double free, UAF 등 취약점 식별</li>
+      </ul>
+    </section>
+
+    <section>
+      <a href="../index.html">← 돌아가기</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트</p>
+  </footer>
+</body>
+</html>
