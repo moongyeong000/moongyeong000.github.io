@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>magic-number</title>
+  <link rel="stylesheet" href="../main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>magic-number</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>기능 개요</h2>
+      <p>파일의 바이너리 시그니처(매직 넘버)를 검사하여 파일 형식을 판별하는 데 사용됩니다.</p>
+    </section>
+
+    <section>
+      <h2>사용 방법</h2>
+      <ul>
+        <li><code>file &lt;filename&gt;</code> 명령으로 간단히 확인 가능</li>
+        <li>정확한 바이너리 헤더를 통해 파일 포맷 식별 가능 (예: PNG → 89 50 4E 47)</li>
+        <li>Hex editor로 열어 매직 넘버 직접 확인 가능</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>활용 예시</h2>
+      <ul>
+        <li>확장자가 잘못된 파일 확인</li>
+        <li>변형된 이미지, 문서 파일의 진짜 포맷 파악</li>
+        <li>스테가노그래피 문제에서 파일 숨김 여부 확인</li>
+      </ul>
+    </section>
+
+    <section>
+      <a href="../index.html">← 돌아가기</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트</p>
+  </footer>
+</body>
+</html>
