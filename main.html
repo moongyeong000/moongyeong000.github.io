@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTF 정보 사이트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>CTF 카테고리별 정보</h1>
+    <nav>
+      <ul>
+        <li><a href="#misc">Misc</a></li>
+        <li><a href="#pwn">Pwn</a></li>
+        <li><a href="#web">Web</a></li>
+        <li><a href="#reversing">Reversing</a></li>
+        <li><a href="#network">Network/Pentest</a></li>
+        <li><a href="#crypto">Crypto</a></li>
+        <li><a href="#forensics">Forensics</a></li>
+        <li><a href="#cooldown">Cooldown</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="misc">
+      <h2>Misc</h2>
+      <p>기타 잡다한 문제로 구성되며 기본적인 CTF 툴 활용법이나 트릭이 나옵니다.</p>
+      <h3>풀이 방법</h3>
+      <ul>
+        <li>문제 분석 (파일 형식 확인, 숨겨진 정보 찾기 등)</li>
+        <li>기초 명령어 및 유틸리티 사용</li>
+      </ul>
+      <h3>추천 툴/사이트</h3>
+      <ul>
+        <li><a href="tools/magic-number.html">magic-number</a><br />파일 포맷 식별 도구</li>
+        <li><a href="tools/strings.html">strings</a><br />텍스트 추출 유틸리티</li>
+      </ul>
+    </section>
+
+    <section id="pwn">
+      <h2>Pwn</h2>
+      <p>버퍼 오버플로우, 포맷 스트링 공격 등 바이너리 공격 중심 문제입니다.</p>
+      <h3>풀이 방법</h3>
+      <ul>
+        <li>gdb, pwndbg를 활용한 디버깅</li>
+        <li>ROP, shellcode 삽입</li>
+      </ul>
+      <h3>추천 툴/사이트</h3>
+      <ul>
+        <li><a href="tools/gdb-pwndbg.html">gdb-pwndbg</a><br />Pwn용 gdb 확장</li>
+        <li><a href="https://dreamhack.io/">Dreamhack Labs</a><br />CTF 연습 플랫폼</li>
+      </ul>
+    </section>
+
+    <section id="web">
+      <h2>Web</h2>
+      <p>XSS, SQL Injection, 파일 업로드 등 웹 취약점을 이용하는 문제입니다.</p>
+      <h3>풀이 방법</h3>
+      <ul>
+        <li>브라우저 개발자 도구 사용</li>
+        <li>BurpSuite를 이용한 요청 조작</li>
+      </ul>
+      <h3>추천 툴/사이트</h3>
+      <ul>
+        <li><a href="tools/burpsuite.html">Burp Suite</a><br />웹 요청 분석 및 조작 도구</li>
+        <li><a href="https://portswigger.net/web-security">PortSwigger</a><br />웹 해킹 학습 플랫폼</li>
+      </ul>
+    </section>
+
+    <!-- Reversing, Network/Pentest, Crypto, Forensics, Cooldown는 같은 포맷으로 추가 -->
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트. 모든 권리 보유.</p>
+  </footer>
+</body>
+</html>
