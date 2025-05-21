@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wireshark</title>
+  <link rel="stylesheet" href="../main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>Wireshark</h1>
+    <p>네트워크 패킷을 캡처하고 분석하는 강력한 오픈소스 툴입니다. 다양한 프로토콜을 지원하여 트래픽 분석 및 네트워크 문제 해결에 필수적입니다.</p>
+  </header>
+
+  <section>
+    <h2>🔗 다운로드 링크</h2>
+    <ul>
+      <li><a href="https://www.wireshark.org/download.html" target="_blank">공식 Wireshark 다운로드</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⚙️ 설치 및 사용법</h2>
+    <pre><code># Windows, macOS, Linux 모두 지원
+- 설치 후 네트워크 인터페이스 선택
+- 실시간 패킷 캡처 또는 저장된 pcap 파일 열기
+- 필터 사용: ip.addr == 192.168.0.1, tcp.port == 80 등
+- 패킷 상세 분석 및 프로토콜 디코딩
+    </code></pre>
+    <p>필터링과 프로토콜 해석을 통해 네트워크 공격 흔적, 데이터 탈취 시도 등을 탐지할 수 있습니다.</p>
+  </section>
+
+  <section>
+    <h2>🧩 사용된 문제 예시</h2>
+    <ul>
+      <li>DEF CON CTF - 네트워크 트래픽 분석 문제</li>
+      <li>picoCTF - 패킷 캡처 기반 문제</li>
+      <li>Google CTF - HTTP, DNS 프로토콜 취약점 분석</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📂 관련 카테고리</h2>
+    <ul>
+      <li>Network Forensics</li>
+      <li>Packet Analysis</li>
+      <li>Traffic Inspection</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>❓ CTF 학습 퀴즈</h2>
+    <details>
+      <summary>퀴즈 보기</summary>
+      <ul>
+        <li>Q1. Wireshark에서 특정 IP 주소 필터를 어떻게 작성하나요?</li>
+        <li>Q2. 패킷 재조립(Reassembly)은 왜 필요한가요?</li>
+        <li>Q3. HTTP 패킷에서 인증 정보를 찾는 방법은?</li>
+      </ul>
+    </details>
+  </section>
+
+  <section>
+    <h2>✅ 실전 체크리스트</h2>
+    <ul>
+      <li>[ ] 필요한 네트워크 인터페이스를 정확히 선택했는가?</li>
+      <li>[ ] 적절한 필터를 사용해 분석 범위를 좁혔는가?</li>
+      <li>[ ] 의심스러운 패킷을 발견해 상세 분석을 했는가?</li>
+      <li>[ ] 패킷 로그를 저장해 재분석 가능하도록 했는가?</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">← 메인 페이지로 돌아가기</a></p>
+  </footer>
+</body>
+</html>

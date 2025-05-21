@@ -1,47 +1,79 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>strings</title>
   <link rel="stylesheet" href="../main_style.css" />
 </head>
 <body>
   <header>
     <h1>strings</h1>
+    <p>바이너리나 기타 파일 내에 포함된 사람이 읽을 수 있는 문자열을 추출하는 유틸리티입니다.</p>
   </header>
 
-  <main>
-    <section>
-      <h2>기능 개요</h2>
-      <p>바이너리 파일 내에 포함된 텍스트 문자열을 추출하는 데 사용됩니다. CTF에서 플래그나 힌트를 찾기 위한 기본 도구입니다.</p>
-    </section>
+  <section>
+    <h2>🔗 다운로드 링크</h2>
+    <ul>
+      <li>Linux 대부분의 배포판에 기본 포함됨</li>
+      <li><a href="https://man7.org/linux/man-pages/man1/strings.1.html" target="_blank">man 페이지 참고</a></li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>사용 방법</h2>
+  <section>
+    <h2>⚙️ 설치 및 사용법</h2>
+    <pre><code># 기본 사용법
+$ strings binaryfile
+
+# 길이가 6 이상인 문자열만 보기
+$ strings -n 6 binaryfile
+
+# 문자열 위치(offset)도 함께 보기
+$ strings -t x binaryfile
+    </code></pre>
+    <p>단순하면서도 매우 유용한 도구로, 숨겨진 플래그나 경로, 문자열 등을 확인할 때 유용합니다.</p>
+  </section>
+
+  <section>
+    <h2>🧩 사용된 문제 예시</h2>
+    <ul>
+      <li>picoCTF - "strings it"</li>
+      <li>UofTCTF - "Hidden in Binary"</li>
+      <li>SECCON - "warmup reverse"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📂 관련 카테고리</h2>
+    <ul>
+      <li>Forensics</li>
+      <li>Reverse Engineering</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>❓ CTF 학습 퀴즈</h2>
+    <details>
+      <summary>퀴즈 보기</summary>
       <ul>
-        <li><code>strings &lt;filename&gt;</code> 명령으로 사용</li>
-        <li>유의미한 문자열 추출을 통해 힌트 또는 플래그 탐색</li>
-        <li>grep과 함께 사용하여 특정 문자열 검색</li>
+        <li>Q1. strings 도구는 어떤 유형의 데이터를 출력하나요?</li>
+        <li>Q2. `-t` 옵션은 어떤 정보를 추가로 보여주나요?</li>
+        <li>Q3. 바이너리 분석에서 strings 결과를 통해 어떤 단서를 얻을 수 있나요?</li>
       </ul>
-    </section>
+    </details>
+  </section>
 
-    <section>
-      <h2>활용 예시</h2>
-      <ul>
-        <li>바이너리 내부에 숨겨진 플래그 추출</li>
-        <li>디버깅 전 사전 정보 수집</li>
-        <li>기초 포렌식 문제에서 텍스트 스캔</li>
-      </ul>
-    </section>
-
-    <section>
-      <a href="../index.html">← 돌아가기</a>
-    </section>
-  </main>
+  <section>
+    <h2>✅ 실전 체크리스트</h2>
+    <ul>
+      <li>[ ] 바이너리 실행 전 strings로 의미 있는 문자열을 확인했는가?</li>
+      <li>[ ] 길이 제한(`-n`)을 조정해가며 숨겨진 문자열을 찾았는가?</li>
+      <li>[ ] offset 정보를 기반으로 다른 분석 도구(r2, gdb 등)와 연계했는가?</li>
+    </ul>
+  </section>
 
   <footer>
-    <p>© 2025 CTF 정보 사이트</p>
+    <p><a href="../index.html">← 메인 페이지로 돌아가기</a></p>
   </footer>
 </body>
 </html>

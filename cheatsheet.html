@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTF 치트시트</title>
+  <link rel="stylesheet" href="main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>CTF 치트시트</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">메인으로</a></li>
+        <li><a href="writeups/index.html">Writeups</a></li>
+        <li><a href="resources.html">자료 모음</a></li>
+        <li><a href="flowchart.html">풀이 흐름도</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="category">
+      <h2>🛠️ Pwn</h2>
+      <pre><code>
+gdb-pwndbg 사용법
+- break main
+- run &lt;args&gt;
+- x/s $rsp
+- ropper --file binary
+
+기본 기법
+- BOF: python -c 'print("A"*offset + &lt;addr&gt;)'
+- ROP: ROPgadget, pwntools
+      </code></pre>
+    </section>
+
+    <section class="category">
+      <h2>🌐 Web</h2>
+      <pre><code>
+XSS
+- &lt;script&gt;alert(1)&lt;/script&gt;
+- &lt;img src=x onerror=alert(1)&gt;
+
+SQL Injection
+- ' OR 1=1 --
+- admin' -- 
+      </code></pre>
+    </section>
+
+    <section class="category">
+      <h2>🔍 Reversing</h2>
+      <pre><code>
+기본 명령어 (Ghidra)
+- F5: 디컴파일
+- Ctrl+G: 주소로 이동
+- 데이터 타입 변경: 오른쪽 클릭 → Data → type 지정
+
+radare2
+- aaa
+- afl
+- pdf @ main
+      </code></pre>
+    </section>
+
+    <section class="category">
+      <h2>🔒 Crypto</h2>
+      <pre><code>
+RSA 분석
+- n = p * q
+- e, d 관계: ed ≡ 1 (mod φ(n))
+
+고전암호
+- 시저: abc → bcd (shift +1)
+- 스키텔라: 행렬 재배열
+
+CyberChef 추천 연산자
+- From Base64
+- XOR Brute Force
+      </code></pre>
+    </section>
+
+    <section class="category">
+      <h2>🔎 Forensics</h2>
+      <pre><code>
+ExifTool
+- exiftool image.jpg
+
+binwalk
+- binwalk -e sample.jpg
+
+strings
+- strings dump.img | grep FLAG
+      </code></pre>
+    </section>
+
+    <section class="category">
+      <h2>📁 Misc</h2>
+      <pre><code>
+파일 포맷 분석
+- file &lt;filename&gt;
+- xxd -b file > hex.txt
+
+숨겨진 데이터 추출
+- steghide, zsteg, foremost
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트 - 치트시트</p>
+  </footer>
+</body>
+</html>

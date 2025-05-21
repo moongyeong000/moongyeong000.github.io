@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CTF 풀이 흐름도</title>
+  <link rel="stylesheet" href="main_style.css" />
+  <style>
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .flow-step {
+      background: #f7f7f7;
+      border: 2px solid #666;
+      border-radius: 8px;
+      margin: 1rem 0;
+      padding: 1rem 1.5rem;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    ol {
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+    ol li {
+      margin-bottom: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CTF 풀이 흐름도</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">메인으로</a></li>
+        <li><a href="cheatsheet.html">치트시트</a></li>
+        <li><a href="writeups/index.html">Writeups</a></li>
+        <li><a href="resources.html">자료 모음</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>CTF 문제 유형별 기본 풀이 절차</h2>
+
+    <section class="flow-step">
+      <h3>1. Recon (정보 수집)</h3>
+      <ol>
+        <li>문제 설명 및 파일 확인</li>
+        <li>파일 형식, 크기, 해시 체크</li>
+        <li>strings, file 명령어 사용</li>
+        <li>네트워크 문제면 포트 스캔 및 트래픽 캡처</li>
+      </ol>
+    </section>
+
+    <section class="flow-step">
+      <h3>2. 분석 (정적/동적)</h3>
+      <ol>
+        <li>바이너리면 Ghidra, IDA, radare2 등으로 정적 분석</li>
+        <li>디버깅 필요 시 gdb, pwndbg 사용</li>
+        <li>웹이면 BurpSuite, 개발자 도구 활용</li>
+        <li>암호 문제는 알고리즘 분석 및 수학적 접근</li>
+      </ol>
+    </section>
+
+    <section class="flow-step">
+      <h3>3. 익스플로잇 및 테스트</h3>
+      <ol>
+        <li>취약점 포착 후 익스플로잇 작성</li>
+        <li>페이로드 제작 및 버퍼 오버플로우, ROP 시도</li>
+        <li>웹 요청 변조 및 페이로드 주입</li>
+        <li>암호 해독 및 스크립트 작성</li>
+      </ol>
+    </section>
+
+    <section class="flow-step">
+      <h3>4. 플래그 획득 및 검증</h3>
+      <ol>
+        <li>출력된 플래그 포맷 확인</li>
+        <li>제출 전에 플래그 유효성 검사</li>
+        <li>Writeup 작성 준비</li>
+      </ol>
+    </section>
+
+    <section class="flow-step">
+      <h3>5. Writeup 작성 및 정리</h3>
+      <ol>
+        <li>문제 설명과 풀이 과정 기록</li>
+        <li>사용한 도구 및 명령어 정리</li>
+        <li>재현 가능한 코드 및 스크립트 첨부</li>
+        <li>팀원 공유 및 복습</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트 - 풀이 흐름도</p>
+  </footer>
+</body>
+</html>

@@ -9,39 +9,64 @@
 <body>
   <header>
     <h1>gdb-pwndbg</h1>
+    <p>디버깅 및 익스플로잇 개발을 도와주는 GDB 확장 도구</p>
   </header>
 
   <main>
     <section>
-      <h2>기능 개요</h2>
-      <p><code>gdb-pwndbg</code>는 GDB를 위한 확장 플러그인으로, 바이너리 익스플로잇 분석을 보다 직관적이고 강력하게 만들어 줍니다. 레지스터, 스택, 힙 등의 상태를 실시간으로 보기 좋게 출력해 줍니다.</p>
+      <h2>다운로드 / 설치</h2>
+      <p><a href="https://github.com/pwndbg/pwndbg" target="_blank">GitHub에서 다운로드</a></p>
+      <pre><code>git clone https://github.com/pwndbg/pwndbg
+cd pwndbg
+./setup.sh</code></pre>
     </section>
 
     <section>
-      <h2>사용 방법</h2>
+      <h2>사용법 예시</h2>
+      <p>다음은 pwndbg를 이용해 프로그램을 디버깅하는 예시입니다.</p>
+      <pre><code>gdb ./vulnerable_binary
+# pwndbg 설치 후 다양한 UI 및 분석 기능 제공
+</code></pre>
+    </section>
+
+    <section>
+      <h2>사용된 CTF 문제 예시</h2>
       <ul>
-        <li>gdb에 pwndbg를 설치: <code>git clone https://github.com/pwndbg/pwndbg</code> 후 <code>./setup.sh</code></li>
-        <li>익스플로잇 대상 바이너리를 gdb로 실행: <code>gdb ./vulnerable</code></li>
-        <li>디버깅 중 스택 프레임, 레지스터, 메모리 등을 시각적으로 확인 가능</li>
+        <li>Dreamhack - basic_exploitation_001</li>
+        <li>picoCTF - buffer overflow 1~3</li>
       </ul>
     </section>
 
     <section>
-      <h2>활용 예시</h2>
+      <h2>관련 카테고리</h2>
       <ul>
-        <li>스택 버퍼 오버플로우 위치 및 크기 파악</li>
-        <li>RET 주소 덮어쓰기 위치 분석</li>
-        <li>힙 구조 분석 및 double free, UAF 등 취약점 식별</li>
+        <li>Pwn</li>
+        <li>Reversing (보조 분석용)</li>
       </ul>
     </section>
 
     <section>
-      <a href="../index.html">← 돌아가기</a>
+      <h2>CTF 학습용 미니 퀴즈</h2>
+      <p><strong>문제:</strong> pwndbg는 GDB의 기본 UI를 완전히 대체한다. (O/X)</p>
+      <details>
+        <summary>정답 보기</summary>
+        <p>✗. pwndbg는 GDB 위에 다양한 기능을 추가하지만 기본 GDB 명령도 그대로 사용합니다.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>실전 체크리스트</h2>
+      <ul>
+        <li>GDB가 올바르게 설치되었는지 확인</li>
+        <li>pwndbg의 Python 요구사항 충족 (Python 3.8 이상 권장)</li>
+        <li>디버깅할 바이너리에 심볼 정보가 포함되어 있는지 확인</li>
+        <li>ASLR, NX 등 보안 설정 확인</li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 CTF 정보 사이트</p>
+    <p>© 2025 CTF 정보 사이트 - tools/gdb-pwndbg.html</p>
   </footer>
 </body>
 </html>

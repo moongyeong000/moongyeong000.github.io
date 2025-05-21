@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burp Suite</title>
+  <link rel="stylesheet" href="../main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>Burp Suite</h1>
+    <p>웹 취약점 진단 및 트래픽 가로채기 도구로, CTF의 웹 문제에서 거의 필수적인 툴입니다.</p>
+  </header>
+
+  <section>
+    <h2>🔗 다운로드 링크</h2>
+    <ul>
+      <li><a href="https://portswigger.net/burp" target="_blank">공식 사이트</a> (Community Edition 무료 제공)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⚙️ 설치 및 사용법</h2>
+    <pre><code># Linux에서 실행 예시 (java 필요)
+$ java -jar burpsuite_community.jar
+
+# 브라우저 프록시 설정 (기본 포트: 127.0.0.1:8080)
+# Burp Proxy 탭에서 Intercept 사용 설정
+    </code></pre>
+    <p>Burp는 웹 애플리케이션과 클라이언트 사이의 요청/응답을 분석하고 조작할 수 있게 해줍니다.</p>
+  </section>
+
+  <section>
+    <h2>🧩 사용된 문제 예시</h2>
+    <ul>
+      <li>picoCTF - "Insp3ct0r", "Where are the robots?"</li>
+      <li>HTB - 여러 웹 문제들</li>
+      <li>Korea CTF - "Web Upload", "Simple Auth"</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📂 관련 카테고리</h2>
+    <ul>
+      <li>Web Exploitation</li>
+      <li>Misc</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>❓ CTF 학습 퀴즈</h2>
+    <details>
+      <summary>퀴즈 보기</summary>
+      <ul>
+        <li>Q1. Burp Suite의 Proxy 기능은 어떤 역할을 하나요?</li>
+        <li>Q2. Repeater 기능과 Intruder 기능의 차이는 무엇인가요?</li>
+        <li>Q3. 로그인 우회나 쿠키 조작을 어떻게 테스트할 수 있나요?</li>
+      </ul>
+    </details>
+  </section>
+
+  <section>
+    <h2>✅ 실전 체크리스트</h2>
+    <ul>
+      <li>[ ] 웹 트래픽을 프록시로 가로채고 조작했는가?</li>
+      <li>[ ] 숨겨진 파라미터나 기능을 찾아보았는가?</li>
+      <li>[ ] Repeater를 통해 요청을 반복 전송하며 응답 변화를 확인했는가?</li>
+      <li>[ ] 로그인 과정이나 쿠키 등을 조작해봤는가?</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><a href="../index.html">← 메인 페이지로 돌아가기</a></p>
+  </footer>
+</body>
+</html>
