@@ -24,27 +24,29 @@
       <h2>🛠️ Pwn</h2>
       <pre><code>
 gdb-pwndbg 사용법
-- break main
-- run &lt;args&gt;
-- x/s $rsp
-- ropper --file binary
+- break main: main 함수에 브레이크포인트 설정
+- run &lt;args&gt;: 프로그램 실행 (인자 필요시 전달)
+- x/s $rsp: 스택 상단 문자열 확인
+- ropper --file binary: ROP 가젯 추출
 
 기본 기법
-- BOF: python -c 'print("A"*offset + &lt;addr&gt;)'
-- ROP: ROPgadget, pwntools
+- BOF (Buffer Overflow): python -c 'print("A"*offset + &lt;addr&gt;)' → 특정 주소로 흐름 변경
+- ROP: ROPgadget으로 가젯 확인, pwntools로 자동화 스크립트 제작
       </code></pre>
     </section>
 
     <section class="category">
       <h2>🌐 Web</h2>
       <pre><code>
-XSS
-- &lt;script&gt;alert(1)&lt;/script&gt;
-- &lt;img src=x onerror=alert(1)&gt;
+XSS (크로스 사이트 스크립팅)
+- &lt;script&gt;alert(1)&lt;/script&gt;: 스크립트 실행 테스트
+- &lt;img src=x onerror=alert(1)&gt;: 이미지 태그로 우회 실행
+→ 사용자 입력을 통해 클라이언트 스크립트 삽입 가능
 
 SQL Injection
-- ' OR 1=1 --
-- admin' -- 
+- ' OR 1=1 -- : 인증 우회 기본 페이로드
+- admin' -- : 관리자 권한 접근 가능성
+→ SQL 쿼리 조작으로 데이터베이스 접근 및 우회 가능
       </code></pre>
     </section>
 
@@ -52,31 +54,32 @@ SQL Injection
       <h2>🔍 Reversing</h2>
       <pre><code>
 기본 명령어 (Ghidra)
-- F5: 디컴파일
+- F5: 디컴파일 → 어셈블리 코드를 고수준 언어로 변환
 - Ctrl+G: 주소로 이동
-- 데이터 타입 변경: 오른쪽 클릭 → Data → type 지정
+- 데이터 타입 변경: 오른쪽 클릭 → Data → 원하는 타입 지정
 
-radare2
-- aaa
-- afl
-- pdf @ main
+radare2 사용법
+- aaa: 분석 초기화 (함수 및 흐름 파악)
+- afl: 함수 목록 출력
+- pdf @ main: main 함수 디스어셈블
+→ 정적 분석을 통해 바이너리 동작 구조 파악
       </code></pre>
     </section>
 
     <section class="category">
       <h2>🔒 Crypto</h2>
       <pre><code>
-RSA 분석
-- n = p * q
-- e, d 관계: ed ≡ 1 (mod φ(n))
+RSA 분석 기초
+- n = p * q: 두 소수의 곱이 공개키 n
+- e, d 관계: ed ≡ 1 (mod φ(n)) → d를 구할 수 있다면 복호화 가능
 
-고전암호
-- 시저: abc → bcd (shift +1)
-- 스키텔라: 행렬 재배열
+고전암호 해석
+- 시저: 알파벳 이동 (abc → bcd)
+- 스키텔라: 원형 막대 기반 행렬 재배열
 
-CyberChef 추천 연산자
-- From Base64
-- XOR Brute Force
+CyberChef 유용한 연산자
+- From Base64: base64 디코딩
+- XOR Brute Force: XOR로 인코딩된 문자열 복호화 시도
       </code></pre>
     </section>
 
@@ -84,13 +87,14 @@ CyberChef 추천 연산자
       <h2>🔎 Forensics</h2>
       <pre><code>
 ExifTool
-- exiftool image.jpg
+- exiftool image.jpg: 메타데이터 확인 (촬영 기기, GPS 등 포함)
 
 binwalk
-- binwalk -e sample.jpg
+- binwalk -e sample.jpg: 파일 내 포함된 바이너리 데이터 추출 (예: 숨겨진 ZIP)
 
 strings
-- strings dump.img | grep FLAG
+- strings dump.img | grep FLAG: 평문 문자열 추출 및 플래그 검색
+→ 메모리/디스크 이미지에서 유의미한 문자열 확인
       </code></pre>
     </section>
 
@@ -98,11 +102,13 @@ strings
       <h2>📁 Misc</h2>
       <pre><code>
 파일 포맷 분석
-- file &lt;filename&gt;
-- xxd -b file > hex.txt
+- file &lt;filename&gt;: 파일 형식 식별
+- xxd -b file > hex.txt: 바이너리를 헥사/바이너리 형태로 덤프
 
 숨겨진 데이터 추출
-- steghide, zsteg, foremost
+- steghide: 이미지/음성 파일에서 비밀 데이터 추출
+- zsteg: PNG 숨은 데이터 자동 추출
+- foremost: 삭제된 파일 복구 및 포렌식 분석
       </code></pre>
     </section>
   </main>
