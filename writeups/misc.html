@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misc Writeups</title>
+  <link rel="stylesheet" href="../main_style.css" />
+</head>
+<body>
+  <header>
+    <h1>📁 Misc Writeups</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">메인으로</a></li>
+        <li><a href="index.html">카테고리 목록</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>[Steganography] Hidden Cat</h2>
+      <p><strong>문제 설명:</strong> 주어진 이미지 파일에 숨겨진 메시지를 찾는 문제입니다.</p>
+      <p><strong>풀이 과정:</strong></p>
+      <ol>
+        <li><code>file cat.png</code>으로 PNG 포맷 확인</li>
+        <li><code>zsteg cat.png</code> 실행 → LSB에서 base64 인코딩 문자열 발견</li>
+        <li>base64 디코딩 후 <code>flag{hidden_in_pixels}</code> 획득</li>
+      </ol>
+
+      <h2>[Encoding] Morse Flag</h2>
+      <p><strong>문제 설명:</strong> 모스 부호로 인코딩된 문자열이 주어졌습니다.</p>
+      <p><strong>풀이 과정:</strong></p>
+      <ol>
+        <li>문자열을 CyberChef의 <code>Morse Code Decode</code> 연산자로 디코딩</li>
+        <li>정상적인 영어 문장 획득 후 <code>flag{morse_decoded_text}</code> 추출</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 정보 사이트 - Misc Writeups</p>
+  </footer>
+</body>
+</html>
