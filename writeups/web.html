@@ -2,54 +2,56 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CTF Writeups - Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writeups - Web</title>
   <link rel="stylesheet" href="../main_style.css" />
+  <style>
+    .hint { display: none; margin-top: 0.5rem; color: #333; background: #f4f4f4; padding: 0.5rem; border-left: 3px solid #1a73e8; }
+    .checklist-item.checked { text-decoration: line-through; color: gray; }
+    .toggle-btn { margin: 0.5rem 0; padding: 0.3rem 0.6rem; cursor: pointer; font-size: 0.9rem; background: #1a73e8; color: white; border: none; border-radius: 5px; }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Web Writeups</h1>
-    <p>웹 취약점 분석, SQL 인젝션, XSS, CSRF, 인증 우회 관련 문제 풀이 모음입니다.</p>
+    <h1>Web 카테고리 문제 풀이</h1>
+    <p>웹 취약점 기반 문제들에 대한 Writeup 모음입니다.</p>
   </header>
 
-  <section>
-    <h2>추천 문제</h2>
-    <ul>
-      <li>
-        <strong>SQL Injection Challenge</strong> - <a href="https://ctftime.org/task/56789" target="_blank" rel="noopener">CTFTime 문제 링크</a><br/>
-        <em>기본적인 SQL 인젝션 취약점을 활용하는 문제입니다.</em>
-      </li>
-      <li>
-        <strong>XSS Playground</strong> - <a href="https://ctftime.org/task/67890" target="_blank" rel="noopener">CTFTime 문제 링크</a><br/>
-        <em>크로스사이트 스크립팅 공격을 이해하는 데 도움이 됩니다.</em>
-      </li>
-      <li>
-        <strong>Authentication Bypass</strong> - <a href="https://ctftime.org/task/78901" target="_blank" rel="noopener">CTFTime 문제 링크</a><br/>
-        <em>인증 우회 기법을 학습할 수 있는 문제입니다.</em>
-      </li>
-    </ul>
-  </section>
+  <nav>
+    <ul></ul>
+  </nav>
+  <script src="../nav.js"></script>
 
-  <section>
-    <h2>주요 사용 도구</h2>
-    <ul>
-      <li><strong>Burp Suite</strong> - 웹 취약점 탐색 및 공격 자동화 도구</li>
-      <li><strong>OWASP ZAP</strong> - 오픈소스 웹 취약점 스캐너</li>
-      <li><strong>sqlmap</strong> - 자동 SQL 인젝션 탐지 및 공격 도구</li>
-    </ul>
-  </section>
+  <main>
+    <section class="category">
+      <h2>📝 Web 문제 1: XSS 기반 플래그 획득</h2>
+      <ul id="checklist1">
+        <li><input type="checkbox" onclick="toggleCheck(this)"> 웹 페이지의 입력 필드 확인</li>
+        <li><input type="checkbox" onclick="toggleCheck(this)"> `<script>` 삽입 시도</li>
+        <li><input type="checkbox" onclick="toggleCheck(this)"> 쿠키 탈취용 페이로드 사용</li>
+      </ul>
 
-  <section>
-    <h2>학습 팁</h2>
-    <ul>
-      <li>웹 요청과 응답을 꼼꼼히 분석하며 취약점을 찾아보세요.</li>
-      <li>쿠키, 세션, 토큰 등의 인증 정보를 이해하고 조작하는 법을 익히세요.</li>
-      <li>OWASP Top 10 웹 취약점을 정리해두면 도움이 됩니다.</li>
-    </ul>
-  </section>
+      <button class="toggle-btn" onclick="toggleHint('hint1')">힌트 보기/숨기기</button>
+      <div id="hint1" class="hint">힌트: 쿠키 정보는 document.cookie 로 접근할 수 있어요.</div>
+
+      <p>공격 성공 후 관리자 계정으로 쿠키를 획득하고 인증에 재사용하면 플래그가 나옵니다.</p>
+    </section>
+  </main>
+
+  <script>
+    function toggleCheck(checkbox) {
+      const li = checkbox.parentElement;
+      li.classList.toggle('checked', checkbox.checked);
+    }
+
+    function toggleHint(id) {
+      const hint = document.getElementById(id);
+      hint.style.display = (hint.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
 
   <footer>
-    <p><a href="index.html">← Writeups 메인으로 돌아가기</a></p>
+    <p>© 2025 CTF 정보 포털 | 제작: ChatGPT + 사용자</p>
   </footer>
 </body>
 </html>
