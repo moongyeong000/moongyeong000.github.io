@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Writeups</title>
-  <link rel="stylesheet" href="../main_style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Writeups - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header>
-    <h1>🔒 Crypto Writeups</h1>
+    <h1>Crypto Writeups</h1>
     <nav>
-      <ul>
-        <li><a href="../index.html">메인으로</a></li>
-        <li><a href="index.html">카테고리 목록</a></li>
+      <ul class="category-nav">
+        <li><a href="web.html">Web</a></li>
+        <li><a href="pwn.html">Pwn</a></li>
+        <li><a href="reversing.html">Reversing</a></li>
+        <li><a href="forensics.html">Forensics</a></li>
+        <li><a href="network.html">Network</a></li>
+        <li><a href="misc.html">Misc</a></li>
+        <li><a href="crypto.html" class="active">Crypto</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
     <section>
-      <h2>[RSA] Easy RSA</h2>
-      <p><strong>문제 설명:</strong> 공개키 (n, e) 와 암호문 c 가 주어짐. n이 작은 소수의 곱인 경우.</p>
-      <p><strong>풀이 과정:</strong></p>
-      <ol>
-        <li>Factordb에 n 입력 → p, q 분해됨</li>
-        <li>파이 함수 φ(n) 계산: (p-1)*(q-1)</li>
-        <li>개인키 d 계산: <code>d = pow(e, -1, φ(n))</code></li>
-        <li>복호화: <code>m = pow(c, d, n)</code> → 평문 획득 후 <code>flag{...}</code> 포맷 확인</li>
-      </ol>
-
-      <h2>[Classic Cipher] Caesar Attack</h2>
-      <p><strong>문제 설명:</strong> 시저 암호로 인코딩된 문자열에서 원문을 복원</p>
-      <p><strong>풀이 과정:</strong></p>
-      <ol>
-        <li>CyberChef에서 Caesar Decode 사용</li>
-        <li>Shift 수치를 조정하여 올바른 평문 도출</li>
-        <li>flag 형식에 맞는 문자열 <code>flag{shift_success}</code> 획득</li>
-      </ol>
+      <h2 class="center">Crypto 문제 Writeups</h2>
+      <ul class="writeup-list">
+        <li>
+          <h3>[2024 Dreamhack] Caesar Cipher</h3>
+          <p>
+            <b>문제 유형:</b> Crypto<br>
+            <b>주요 포인트:</b> 시저 암호, 알파벳 이동, 빈도 분석<br>
+            <a href="https://dreamhack.io/wargame/challenges/6/" target="_blank">자세히 보기</a>
+          </p>
+        </li>
+        <li>
+          <h3>[2023 picoCTF] RSA Basics</h3>
+          <p>
+            <b>문제 유형:</b> Crypto<br>
+            <b>주요 포인트:</b> RSA 공개키, 모듈러 연산, 복호화<br>
+            <a href="https://picoctf.org/writeups/rsabasics" target="_blank">자세히 보기</a>
+          </p>
+        </li>
+      </ul>
     </section>
   </main>
-
   <footer>
-    <p>© 2025 CTF 정보 사이트 - Crypto Writeups</p>
+    <p>© 2025 CTF 실전 자료실</p>
   </footer>
 </body>
 </html>

@@ -3,80 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTF 문제 카테고리 홈</title>
-  <link rel="stylesheet" href="main_style.css">
+  <title>CTF 실전 자료실</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- 헤더와 네비게이션 -->
   <header>
-    <h1>🏁 CTF 문제 풀이 사이트</h1>
+    <img src="images/main_banner.png" alt="CTF 실전 자료실 메인 배너" class="main-banner">
+    <h1>CTF 실전 자료실</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">🏠 Home</a></li>
-        <li><a href="writeups/pwn.html">🛠️ Pwn</a></li>
-        <li><a href="writeups/web.html">🌐 Web</a></li>
-        <li><a href="writeups/crypto.html">🔒 Crypto</a></li>
-        <li><a href="writeups/reversing.html">🔍 Reversing</a></li>
-        <li><a href="writeups/forensics.html">🔎 Forensics</a></li>
-        <li><a href="writeups/misc.html">📁 Misc</a></li>
+      <ul class="category-nav">
+        <li><a href="categories/web.html">Web</a></li>
+        <li><a href="categories/pwn.html">Pwn</a></li>
+        <li><a href="categories/reversing.html">Reversing</a></li>
+        <li><a href="categories/forensics.html">Forensics</a></li>
+        <li><a href="categories/network.html">Network</a></li>
+        <li><a href="categories/misc.html">Misc</a></li>
+        <li><a href="categories/crypto.html">Crypto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="category-grid">
-    <section class="category-card">
-      <img src="images/pwn_preview.png" alt="Pwn Preview">
-      <h2>🛠️ Pwn</h2>
-      <p>버퍼 오버플로우, 포맷 스트링 공격 등 바이너리 취약점 익스플로잇</p>
-      <a href="writeups/pwn.html">자세히 보기 →</a>
+  <main>
+    <!-- Writeups 아카이브 -->
+    <section>
+      <h2 class="section-title center">📝 Writeups 아카이브</h2>
+      <ul class="main-list">
+        <li><a href="writeups/index.html">전체 Writeups 보기</a></li>
+        <li><a href="writeups/web.html">Web Writeups</a></li>
+        <li><a href="writeups/pwn.html">Pwn Writeups</a></li>
+        <li><a href="writeups/reversing.html">Reversing Writeups</a></li>
+        <li><a href="writeups/forensics.html">Forensics Writeups</a></li>
+        <li><a href="writeups/network.html">Network Writeups</a></li>
+        <li><a href="writeups/misc.html">Misc Writeups</a></li>
+        <li><a href="writeups/crypto.html">Crypto Writeups</a></li>
+      </ul>
     </section>
 
-    <section class="category-card">
-      <img src="images/web_preview.png" alt="Web Preview">
-      <h2>🌐 Web</h2>
-      <p>XSS, SQLi, 파일 업로드 등 웹 기반 취약점과 공격 분석</p>
-      <a href="writeups/web.html">자세히 보기 →</a>
+    <!-- 강의/실습 사이트 모음 -->
+    <section>
+      <h2 class="section-title center">🌐 강의/실습 사이트 모음</h2>
+      <ul class="main-list">
+        <li><a href="https://picoctf.org/" target="_blank">picoCTF</a> – 입문자용 문제 플랫폼</li>
+        <li><a href="https://dreamhack.io/" target="_blank">Dreamhack</a> – 한국어 문제/강의</li>
+        <li><a href="https://hackthebox.com/" target="_blank">HackTheBox</a> – 실전 침투 테스트 실습</li>
+        <li><a href="https://tryhackme.com/" target="_blank">TryHackMe</a> – 단계별 실습형 강의</li>
+        <li><a href="lectures/index.html">더 많은 강의/실습 사이트 보기</a></li>
+      </ul>
     </section>
 
-    <section class="category-card">
-      <img src="images/crypto_preview.png" alt="Crypto Preview">
-      <h2>🔒 Crypto</h2>
-      <p>대칭키, 공개키, 수학 기반 암호 분석과 복호화</p>
-      <a href="writeups/crypto.html">자세히 보기 →</a>
+    <!-- 문제풀이 도구/사이트 모음 -->
+    <section>
+      <h2 class="section-title center">🛠️ 문제풀이 도구/사이트 모음</h2>
+      <ul class="main-list">
+        <li><a href="tools/encode-helper.html">인코딩/디코딩 도구</a></li>
+        <li><a href="tools/dragdrop-demo.html">드래그 앤 드롭 실습</a></li>
+        <li><a href="https://georgeom.net/StegOnline/image" target="_blank">StegOnline</a></li>
+        <li><a href="https://tools.dreamhack.games/" target="_blank">Dreamhack Tools</a></li>
+        <li><a href="https://regexr.com/" target="_blank">Regexr</a></li>
+      </ul>
     </section>
 
-    <section class="category-card">
-      <img src="images/reversing_preview.png" alt="Reversing Preview">
-      <h2>🔍 Reversing</h2>
-      <p>바이너리 분석, 디컴파일링, 함수 흐름 이해</p>
-      <a href="writeups/reversing.html">자세히 보기 →</a>
-    </section>
-
-    <section class="category-card">
-      <img src="images/forensics_preview.png" alt="Forensics Preview">
-      <h2>🔎 Forensics</h2>
-      <p>디지털 흔적 분석, 메타데이터 추출, 디스크 포렌식</p>
-      <a href="writeups/forensics.html">자세히 보기 →</a>
-    </section>
-
-    <section class="category-card">
-      <img src="images/misc_preview.png" alt="Misc Preview">
-      <h2>📁 Misc</h2>
-      <p>스테가노그래피, 파일 포맷, 트리비아 문제 등 기타 유형</p>
-      <a href="writeups/misc.html">자세히 보기 →</a>
+    <!-- (선택) 최근 업데이트/공지/팁 -->
+    <section>
+      <h2 class="section-title center">📢 최근 업데이트 & 공지</h2>
+      <ul class="main-list">
+        <li>2025-06-05: Crypto 카테고리 추가, 도구 사용법 이미지 업로드</li>
+        <li>2025-05-30: 드래그 앤 드롭 실습 페이지 오픈</li>
+        <li>사이트 구조/디자인 피드백은 언제든 환영합니다!</li>
+      </ul>
     </section>
   </main>
 
-  <section class="info-links">
-    <h3>📚 참고 자료</h3>
-    <ul>
-      <li><a href="cheatsheet.html">📄 치트시트</a></li>
-      <li><a href="flowchart.html">🧭 풀이 흐름도</a></li>
-      <li><a href="resources.html">📦 도구 & 자료 모음</a></li>
-    </ul>
-  </section>
-
   <footer>
-    <p>© 2025 CTF 정보 사이트</p>
+    <p>© 2025 CTF 실전 자료실 | 문의: your@email.com</p>
   </footer>
 </body>
 </html>

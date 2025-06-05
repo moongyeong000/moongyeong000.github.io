@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pwn 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../images/pwn_category_banner.png" alt="Pwn 카테고리 대표 이미지" class="category-banner">
+    <h1>Pwn 카테고리</h1>
+    <nav>
+      <ul class="category-nav">
+        <li><a href="web.html">Web</a></li>
+        <li><a href="pwn.html" class="active">Pwn</a></li>
+        <li><a href="reversing.html">Reversing</a></li>
+        <li><a href="forensics.html">Forensics</a></li>
+        <li><a href="network.html">Network</a></li>
+        <li><a href="misc.html">Misc</a></li>
+        <li><a href="crypto.html">Crypto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 풀이 흐름도 -->
+    <section>
+      <h2 class="center">🗺️ Pwn 문제 풀이 흐름도</h2>
+      <img src="../images/pwn_flowchart.png" alt="Pwn 문제 풀이 흐름도" class="flowchart-img">
+    </section>
+
+    <!-- 문제 유형 및 대표 예시 -->
+    <section>
+      <h2 class="center">🔎 Pwn 문제 유형 & 대표 예시</h2>
+      <ul>
+        <li><b>Buffer Overflow</b>: 스택 버퍼 오버플로우, 리턴 주소 덮어쓰기<br>
+          <img src="../images/bof_example.png" alt="Buffer Overflow 예시" class="example-img">
+        </li>
+        <li><b>Format String</b>: 포맷 스트링 취약점, 임의 메모리 읽기/쓰기<br>
+          <img src="../images/formatstring_example.png" alt="Format String 예시" class="example-img">
+        </li>
+        <li><b>ROP/Ret2libc</b>: Return Oriented Programming, 라이브러리 함수 호출<br>
+          <img src="../images/rop_example.png" alt="ROP 예시" class="example-img">
+        </li>
+        <li><b>Heap Exploitation</b>: 힙 오버플로우, Use-After-Free, Double Free 등</li>
+      </ul>
+    </section>
+
+    <!-- 추천 도구/사이트 및 사용법 -->
+    <section>
+      <h2 class="center">🛠️ Pwn 문제 추천 도구/사이트</h2>
+      <ul>
+        <li>
+          <img src="../images/gdb_icon.png" alt="GDB 아이콘" class="tool-icon">
+          <b>GDB / pwndbg</b>: 바이너리 디버깅, 메모리 분석<br>
+          <span class="tool-desc">실행 중인 프로그램의 메모리, 레지스터, 스택 추적</span>
+        </li>
+        <li>
+          <img src="../images/ghidra_icon.png" alt="Ghidra 아이콘" class="tool-icon">
+          <b>Ghidra</b>: 정적 분석, 함수/변수 구조 파악<br>
+          <span class="tool-desc">오픈소스 리버스 엔지니어링 도구</span>
+        </li>
+        <li>
+          <img src="../images/pwntools_icon.png" alt="pwntools 아이콘" class="tool-icon">
+          <b>pwntools</b>: 익스플로잇 자동화 파이썬 라이브러리<br>
+          <span class="tool-desc">익스플로잇 작성, 원격 서버와 통신, 페이로드 생성</span>
+        </li>
+        <!-- 필요시 추가 -->
+      </ul>
+    </section>
+
+    <!-- 실전 체크리스트 & 주의사항 -->
+    <section>
+      <h2 class="center">💡 실전 체크리스트 & 주의사항</h2>
+      <ul>
+        <li>NX, PIE, ASLR 등 보안 옵션 확인</li>
+        <li>입력값 길이, 오프셋, 페이로드 구조 파악</li>
+        <li>디버깅/분석 도구 적극 활용</li>
+        <li>실제 문제 예시/Writeup: <a href="../writeups/pwn.html">Pwn Writeups 바로가기</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

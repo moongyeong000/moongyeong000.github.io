@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인코딩/디코딩 도구 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>인코딩/디코딩 도구</h1>
+    <nav>
+      <a href="../index.html">메인으로 돌아가기</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2 class="center">문자열 인코딩/디코딩 변환</h2>
+      <form id="encodeForm" class="tool-form">
+        <label for="mode">방식 선택:</label>
+        <select id="mode">
+          <option value="base64encode">Base64 인코딩</option>
+          <option value="base64decode">Base64 디코딩</option>
+          <option value="urlencode">URL 인코딩</option>
+          <option value="urldecode">URL 디코딩</option>
+          <option value="hexencode">HEX 인코딩</option>
+          <option value="hexdecode">HEX 디코딩</option>
+        </select>
+        <textarea id="inputText" placeholder="여기에 변환할 내용을 입력하세요"></textarea>
+        <button type="button" onclick="convertText()">변환</button>
+      </form>
+      <div id="output" class="tool-output"></div>
+    </section>
+    <section>
+      <h2 class="center">도구 사용법</h2>
+      <img src="../images/encode_helper_guide.png" alt="인코딩/디코딩 도구 사용법" class="tool-guide-img">
+      <ul>
+        <li>원하는 변환 방식을 선택하세요.</li>
+        <li>입력란에 변환할 내용을 붙여넣고 <b>변환</b> 버튼을 누르세요.</li>
+        <li>결과는 아래에 바로 표시됩니다.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

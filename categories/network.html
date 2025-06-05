@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../images/network_category_banner.png" alt="Network 카테고리 대표 이미지" class="category-banner">
+    <h1>Network 카테고리</h1>
+    <nav>
+      <ul class="category-nav">
+        <li><a href="web.html">Web</a></li>
+        <li><a href="pwn.html">Pwn</a></li>
+        <li><a href="reversing.html">Reversing</a></li>
+        <li><a href="forensics.html">Forensics</a></li>
+        <li><a href="network.html" class="active">Network</a></li>
+        <li><a href="misc.html">Misc</a></li>
+        <li><a href="crypto.html">Crypto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2 class="center">🗺️ Network 문제 풀이 흐름도</h2>
+      <img src="../images/network_flowchart.png" alt="Network 문제 풀이 흐름도" class="flowchart-img">
+    </section>
+    <section>
+      <h2 class="center">🔎 Network 문제 유형 & 대표 예시</h2>
+      <ul>
+        <li><b>Packet Analysis</b>: pcap, 프로토콜 분석, 플래그 추출<br>
+          <img src="../images/packet_example.png" alt="패킷 분석 예시" class="example-img">
+        </li>
+        <li><b>Traffic Replay</b>: netcat, socat, 커스텀 프로토콜<br>
+          <img src="../images/traffic_example.png" alt="트래픽 재생 예시" class="example-img">
+        </li>
+        <li><b>Service Exploitation</b>: FTP, SMTP, DNS 등 서비스 취약점<br>
+          <img src="../images/service_example.png" alt="서비스 익스플로잇 예시" class="example-img">
+        </li>
+        <li><b>Port Scanning</b>: nmap, masscan 등</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="center">🛠️ Network 추천 도구/사이트</h2>
+      <ul>
+        <li>
+          <img src="../images/wireshark_icon.png" alt="Wireshark 아이콘" class="tool-icon">
+          <b>Wireshark</b>: 패킷 분석, 프로토콜 추적
+        </li>
+        <li>
+          <img src="../images/netcat_icon.png" alt="netcat 아이콘" class="tool-icon">
+          <b>netcat</b>: 네트워크 통신, 트래픽 송수신
+        </li>
+        <li>
+          <img src="../images/nmap_icon.png" alt="nmap 아이콘" class="tool-icon">
+          <b>nmap</b>: 포트 스캔, 서비스 탐지
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="center">💡 실전 체크리스트 & 주의사항</h2>
+      <ul>
+        <li>패킷/트래픽 캡처, 프로토콜 구조 파악</li>
+        <li>서비스별 취약점/설정 확인</li>
+        <li>실제 문제 예시/Writeup: <a href="../writeups/network.html">Network Writeups 바로가기</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

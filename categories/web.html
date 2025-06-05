@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../images/web_category_banner.png" alt="Web 카테고리 대표 이미지" class="category-banner">
+    <h1>Web 카테고리</h1>
+    <nav>
+      <ul class="category-nav">
+        <li><a href="web.html" class="active">Web</a></li>
+        <li><a href="pwn.html">Pwn</a></li>
+        <li><a href="reversing.html">Reversing</a></li>
+        <li><a href="forensics.html">Forensics</a></li>
+        <li><a href="network.html">Network</a></li>
+        <li><a href="misc.html">Misc</a></li>
+        <li><a href="crypto.html">Crypto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 풀이 흐름도 -->
+    <section>
+      <h2 class="center">🗺️ Web 문제 풀이 흐름도</h2>
+      <img src="../images/web_flowchart.png" alt="Web 문제 풀이 흐름도" class="flowchart-img">
+    </section>
+
+    <!-- 문제 유형 및 대표 예시 -->
+    <section>
+      <h2 class="center">🔎 Web 문제 유형 & 대표 예시</h2>
+      <ul>
+        <li><b>SQL Injection</b>: 입력값 우회, Blind SQLi, Error-based, UNION-based<br>
+          <img src="../images/sqli_example.png" alt="SQLi 예시" class="example-img">
+        </li>
+        <li><b>XSS</b>: Reflected, Stored, DOM-based<br>
+          <img src="../images/xss_example.png" alt="XSS 예시" class="example-img">
+        </li>
+        <li><b>File Upload</b>: 확장자 우회, 경로 조작, 파일 인클루전<br>
+          <img src="../images/fileupload_example.png" alt="파일 업로드 예시" class="example-img">
+        </li>
+        <li><b>기타</b>: SSTI, CSRF, 인증/인가 취약점 등</li>
+      </ul>
+    </section>
+
+    <!-- 추천 도구/사이트 및 사용법 -->
+    <section>
+      <h2 class="center">🛠️ Web 문제 추천 도구/사이트</h2>
+      <ul>
+        <li>
+          <img src="../images/burp_icon.png" alt="Burp Suite 아이콘" class="tool-icon">
+          <b>Burp Suite</b>: 프록시, 리피터, 인트루더 등<br>
+          <span class="tool-desc">웹 트래픽 가로채기, 요청/응답 분석, 자동화 공격 지원</span>
+        </li>
+        <li>
+          <img src="../images/steghide_icon.png" alt="StegOnline 아이콘" class="tool-icon">
+          <b>StegOnline</b>: 이미지/파일 은닉 데이터 분석<br>
+          <span class="tool-desc">웹 기반 스테가노그래피 분석 도구</span>
+        </li>
+        <li>
+          <img src="../images/regexr_icon.png" alt="Regexr 아이콘" class="tool-icon">
+          <b>Regexr</b>: 정규표현식 테스트<br>
+          <span class="tool-desc">입력값 필터 우회, 패턴 분석에 활용</span>
+        </li>
+        <!-- 필요시 추가 -->
+      </ul>
+    </section>
+
+    <!-- 실전 체크리스트 & 주의사항 -->
+    <section>
+      <h2 class="center">💡 실전 체크리스트 & 주의사항</h2>
+      <ul>
+        <li>입력값 검증/필터 우회 시도</li>
+        <li>세션/쿠키/파라미터 조작</li>
+        <li>관리자 페이지, 히든 파라미터, 주석 등 소스코드 분석</li>
+        <li>실제 문제 예시/Writeup: <a href="../writeups/web.html">Web Writeups 바로가기</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

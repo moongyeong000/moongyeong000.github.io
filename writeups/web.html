@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Writeups - Web</title>
-  <link rel="stylesheet" href="../main_style.css" />
-  <style>
-    .hint { display: none; margin-top: 0.5rem; color: #333; background: #f4f4f4; padding: 0.5rem; border-left: 3px solid #1a73e8; }
-    .checklist-item.checked { text-decoration: line-through; color: gray; }
-    .toggle-btn { margin: 0.5rem 0; padding: 0.3rem 0.6rem; cursor: pointer; font-size: 0.9rem; background: #1a73e8; color: white; border: none; border-radius: 5px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Writeups - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header>
-    <h1>Web 카테고리 문제 풀이</h1>
-    <p>웹 취약점 기반 문제들에 대한 Writeup 모음입니다.</p>
-  </header>
-
-  <nav>
-    <ul></ul>
-  </nav>
-  <script src="../nav.js"></script>
-
-  <main>
-    <section class="category">
-      <h2>📝 Web 문제 1: XSS 기반 플래그 획득</h2>
-      <ul id="checklist1">
-        <li><input type="checkbox" onclick="toggleCheck(this)"> 웹 페이지의 입력 필드 확인</li>
-        <li><input type="checkbox" onclick="toggleCheck(this)"> `<script>` 삽입 시도</li>
-        <li><input type="checkbox" onclick="toggleCheck(this)"> 쿠키 탈취용 페이로드 사용</li>
+    <h1>Web Writeups</h1>
+    <nav>
+      <ul class="category-nav">
+        <li><a href="web.html" class="active">Web</a></li>
+        <li><a href="pwn.html">Pwn</a></li>
+        <li><a href="reversing.html">Reversing</a></li>
+        <li><a href="forensics.html">Forensics</a></li>
+        <li><a href="network.html">Network</a></li>
+        <li><a href="misc.html">Misc</a></li>
+        <li><a href="crypto.html">Crypto</a></li>
       </ul>
-
-      <button class="toggle-btn" onclick="toggleHint('hint1')">힌트 보기/숨기기</button>
-      <div id="hint1" class="hint">힌트: 쿠키 정보는 document.cookie 로 접근할 수 있어요.</div>
-
-      <p>공격 성공 후 관리자 계정으로 쿠키를 획득하고 인증에 재사용하면 플래그가 나옵니다.</p>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2 class="center">Web 문제 Writeups</h2>
+      <ul class="writeup-list">
+        <li id="dice-ctf">
+          <h3>[2024 Dice CTF] One_Blog</h3>
+          <p>
+            <b>문제 유형:</b> Web<br>
+            <b>주요 취약점:</b> SQL Injection, 인증 우회<br>
+            <b>풀이 요약:</b> 입력값 필터링 미흡을 이용해 SQLi 성공, 관리자 인증 우회<br>
+            <a href="https://one3147.tistory.com/77" target="_blank">자세히 보기</a>
+          </p>
+        </li>
+        <li id="la-ctf">
+          <h3>[2024 LA CTF] XSS 취약점 분석</h3>
+          <p>
+            <b>문제 유형:</b> Web<br>
+            <b>주요 취약점:</b> XSS<br>
+            <b>풀이 요약:</b> Name/Username 입력값이 필터링 없이 HTML에 출력되어 XSS 가능<br>
+            <a href="https://one3147.tistory.com/79" target="_blank">자세히 보기</a>
+          </p>
+        </li>
+        <li id="template-shack">
+          <h3>[2020 HacktivityCon] Template Shack</h3>
+          <p>
+            <b>문제 유형:</b> Web<br>
+            <b>주요 취약점:</b> Template Injection<br>
+            <b>풀이 요약:</b> 템플릿 엔진의 취약점 이용, 임의 코드 실행<br>
+            <a href="https://ctftime.org/writeup/22722" target="_blank">자세히 보기</a>
+          </p>
+        </li>
+        <!-- 필요시 더 추가 -->
+      </ul>
     </section>
   </main>
-
-  <script>
-    function toggleCheck(checkbox) {
-      const li = checkbox.parentElement;
-      li.classList.toggle('checked', checkbox.checked);
-    }
-
-    function toggleHint(id) {
-      const hint = document.getElementById(id);
-      hint.style.display = (hint.style.display === 'none') ? 'block' : 'none';
-    }
-  </script>
-
   <footer>
-    <p>© 2025 CTF 정보 포털 | 제작: ChatGPT + 사용자</p>
+    <p>© 2025 CTF 실전 자료실</p>
   </footer>
 </body>
 </html>
