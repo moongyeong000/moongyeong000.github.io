@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Pwn 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="../images/pwn_category_banner.png" alt="Pwn 카테고리 대표 이미지" class="category-banner">
+    <h1>Pwn 카테고리</h1>
+  <nav>
+  <ul  class="category-nav">
+  	<a href="../index.html">Home</a>
+    <a href="web.html">Web</a>
+    <a href="pwn.html" class="active">Pwn</a>
+    <a href="reversing.html">Reversing</a>
+    <a href="forensics.html">Forensics</a>
+    <a href="network.html">Network</a>
+    <a href="misc.html">Misc</a>
+    <a href="crypto.html">Crypto</a>
+  	<button id="darkmode-toggle">다크모드</button>
+  </ul>
+  </nav>
+  </header>
+  <main>
+    <section>
+	  <h2 class="section-title center">주요 문제 유형 & 공략법</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>Buffer Overflow</h3>
+	      <div><b>정의:</b> 입력값이 버퍼 크기를 초과해 인접 메모리(리턴 주소 등)를 덮어쓰는 취약점</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>입력값 길이 제한이 없는 gets(), scanf(), strcpy() 등 사용</li>
+	          <li>스택에 저장된 리턴 주소 등 중요한 데이터가 보호되지 않을 때</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>과도한 입력값으로 리턴 주소를 원하는 값(쉘코드, 함수 주소 등)으로 덮어쓰기</li>
+	          <li>Exploit: <code>python -c 'print("A"*offset + "B"*4)' | ./vuln</code></li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>Format String</h3>
+	      <div><b>정의:</b> printf 등 포맷 함수에 사용자의 입력이 직접 들어가 메모리 읽기/쓰기 등이 가능한 취약점</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>printf(user_input)처럼 입력값이 포맷 문자열로 사용될 때</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li><code>%x, %s, %n</code> 등 포맷 스트링을 이용해 메모리 값 유출/변조</li>
+	          <li>예: <code>AAAA%x%x%x%x</code> 입력 시 스택 값 노출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>Use-After-Free</h3>
+	      <div><b>정의:</b> 해제된 메모리(포인터)를 다시 사용해 임의 코드 실행 또는 정보 유출이 가능한 취약점</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>free() 호출 후 포인터를 재사용</li>
+	          <li>메모리 재할당 시 공격자가 원하는 데이터로 덮어쓰기 가능</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>해제 후 재할당된 영역에 악의적 데이터 삽입</li>
+	          <li>함수 포인터, vtable 등 중요한 포인터 덮어쓰기</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>ROP (Return Oriented Programming)</h3>
+	      <div><b>정의:</b> 코드 실행 방지 기법(DEP, NX)을 우회하기 위해 기존 바이너리 내 명령어 조각(gadget)을 연결해 공격하는 기술</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>스택 오버플로우 등으로 리턴 주소 제어 가능</li>
+	          <li>실행 가능한 코드 조각(gadget)이 존재</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>gadget 주소들을 스택에 쌓아 원하는 시스템 호출 등 수행</li>
+	          <li>예: system("/bin/sh") 실행을 위한 ROP 체인 생성</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2 class="section-title center">주요 도구 & 툴</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>pwntools</h3>
+	      <div><b>설명:</b> 파이썬 기반의 바이너리 익스플로잇 자동화 라이브러리</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>원격/로컬 바이너리와 통신, 페이로드 자동 생성</li>
+	          <li>ROP 체인, 쉘코드, 패딩 자동화</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>익스플로잇 스크립트 작성, 반복 공격 자동화</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>GDB (GNU Debugger)</h3>
+	      <div><b>설명:</b> 리눅스 환경에서 바이너리 디버깅, 메모리/레지스터/스택 분석 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>브레이크포인트, 메모리/레지스터 값 확인 및 수정</li>
+	          <li>프로그램 흐름 추적, 스택 프레임 분석</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>오버플로우 위치, 페이로드 효과, ROP 체인 동작 확인</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>IDA Pro / Ghidra / Radare2</h3>
+	      <div><b>설명:</b> 바이너리의 어셈블리 코드, 함수 흐름, 제어 흐름 그래프를 분석하는 리버싱 툴</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>디스어셈블, 함수/변수 분석, 코드 주석</li>
+	          <li>자동화 스크립트, 플러그인 지원</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>익스플로잇 대상 함수/버그 위치 파악, 바이너리 구조 분석</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>one_gadget</h3>
+	      <div><b>설명:</b> libc 파일에서 system("/bin/sh") 실행이 가능한 gadget 주소를 자동으로 찾아주는 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>libc 버전별 one-gadget 주소 자동 검색</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>libc leak 후 익스플로잇에 바로 활용</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

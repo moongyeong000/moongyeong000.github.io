@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Forensics 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="../images/forensics_category_banner.png" alt="Forensics 카테고리 대표 이미지" class="category-banner">
+    <h1>Forensics 카테고리</h1>
+  <nav>
+  <ul  class="category-nav">
+  	<a href="../index.html">Home</a>
+    <a href="web.html">Web</a>
+    <a href="pwn.html">Pwn</a>
+    <a href="reversing.html">Reversing</a>
+    <a href="forensics.html" class="active">Forensics</a>
+    <a href="network.html">Network</a>
+    <a href="misc.html">Misc</a>
+    <a href="crypto.html">Crypto</a>
+  	<button id="darkmode-toggle">다크모드</button>
+  </ul>
+  </nav>
+  </header>
+  <main>
+    <section>
+	  <h2 class="section-title center">주요 문제 유형 & 공략법</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>디스크/이미지 분석</h3>
+	      <div><b>정의:</b> 디스크, USB, 메모리 덤프 등에서 플래그나 중요한 정보를 추출하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>디스크/이미지 파일, 메모리 덤프 등 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>파일 시스템 분석, 삭제 파일 복구, 숨겨진 데이터 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>네트워크 패킷 분석</h3>
+	      <div><b>정의:</b> 캡처된 패킷(pcap)에서 플래그, 파일, 인증 정보 등을 찾는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>Wireshark 등으로 열 수 있는 pcap 파일 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>프로토콜 분석, 파일 추출, 평문 데이터/쿠키/세션 분석</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>Steganography (스테가노그래피)</h3>
+	      <div><b>정의:</b> 이미지, 오디오, 영상 파일 등에 숨겨진 데이터를 찾아내는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>의심스러운 미디어 파일 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>LSB, 메타데이터, 히든 섹션, 파일 포맷 분석</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2 class="section-title center">주요 도구 & 툴</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>Autopsy / FTK Imager</h3>
+	      <div><b>설명:</b> 디스크/이미지 파일의 파일 시스템, 삭제 파일, 메타데이터 분석 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>파일 복구, 타임라인 분석, 해시 비교</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>삭제된 플래그 파일 복구, 파일 생성/수정 이력 추적</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>Wireshark</h3>
+	      <div><b>설명:</b> 네트워크 패킷(pcap) 분석 및 프로토콜 디코딩 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>TCP/UDP/HTTP 등 다양한 프로토콜 분석</li>
+	          <li>파일 추출, 필터링, 스트림 재조립</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>패킷 내 평문 플래그, 파일, 인증 정보 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>StegSolve / StegOnline</h3>
+	      <div><b>설명:</b> 이미지 파일의 LSB, 컬러 채널, 메타데이터 등 숨겨진 정보를 시각적으로 분석하는 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>채널 분리, LSB 추출, 이미지 변환</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>이미지에 숨겨진 플래그, 텍스트, 파일 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>binwalk</h3>
+	      <div><b>설명:</b> 바이너리 파일에서 임베디드 데이터, 파일 시스템, 압축 파일 등을 자동으로 추출하는 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>파일 시그니처 스캔, 자동 추출, 파일 시스템 분석</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>펌웨어, 이미지 파일에서 숨겨진 데이터 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

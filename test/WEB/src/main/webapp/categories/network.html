@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Network 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="../images/network_category_banner.png" alt="Network 카테고리 대표 이미지" class="category-banner">
+    <h1>Network 카테고리</h1>
+  <nav>
+  <ul  class="category-nav">
+  	<a href="../index.html">Home</a>
+    <a href="web.html">Web</a>
+    <a href="pwn.html">Pwn</a>
+    <a href="reversing.html">Reversing</a>
+    <a href="forensics.html">Forensics</a>
+    <a href="network.html" class="active">Network</a>
+    <a href="misc.html">Misc</a>
+    <a href="crypto.html">Crypto</a>
+  	<button id="darkmode-toggle">다크모드</button>
+  </ul>
+  </nav>
+  </header>
+  <main>
+    <section>
+	  <h2 class="section-title center">주요 문제 유형 & 공략법</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>패킷 분석</h3>
+	      <div><b>정의:</b> 네트워크 트래픽(pcap 등)에서 플래그, 인증 정보, 평문 데이터 등을 찾는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>캡처된 네트워크 트래픽 파일 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>Wireshark 등으로 프로토콜/스트림 분석, 파일/플래그 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>서비스 분석</h3>
+	      <div><b>정의:</b> 서버에서 동작 중인 서비스의 취약점/정보를 분석하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>포트가 열려 있고, 서비스 배너/응답이 노출되는 경우</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>nmap 등으로 서비스/버전 식별, 취약점 검색</li>
+	          <li>취약 서비스에 직접 연결하여 플래그 획득</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>Port Knocking / Custom Protocol</h3>
+	      <div><b>정의:</b> 특정 순서로 포트에 접속하거나, 커스텀 프로토콜을 분석하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>문제에서 포트 시퀀스, 커스텀 프로토콜 힌트 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>netcat, nmap, 스크립트 등으로 지정된 포트/프로토콜에 맞춰 접속</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2 class="section-title center">주요 도구 & 툴</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>Wireshark</h3>
+	      <div><b>설명:</b> 네트워크 패킷 분석 및 프로토콜 디코딩 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>TCP/UDP/HTTP 등 다양한 프로토콜 분석</li>
+	          <li>필터링, 스트림 재조립, 파일 추출</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>패킷 내 플래그, 파일, 인증 정보 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>nmap</h3>
+	      <div><b>설명:</b> 네트워크 포트 스캐닝 및 서비스/버전 탐지 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>열려 있는 포트, 서비스, 운영체제 탐지</li>
+	          <li>스크립트 엔진으로 취약점 자동 진단</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>서비스 정보 수집, 취약점 탐지, 포트 노킹 테스트</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>netcat (nc)</h3>
+	      <div><b>설명:</b> TCP/UDP 연결 및 데이터 송수신, 포트 스캐닝 등 다용도 네트워크 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>서버/클라이언트 연결, 데이터 전송, 포트 리스닝</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>원격 서버 접속, 커스텀 프로토콜 테스트, 플래그 획득</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>tcpdump</h3>
+	      <div><b>설명:</b> 터미널 기반 네트워크 패킷 캡처 및 분석 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>실시간 트래픽 캡처, 필터링, 패킷 저장(pcap)</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>패킷 캡처 후 Wireshark 등으로 상세 분석</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

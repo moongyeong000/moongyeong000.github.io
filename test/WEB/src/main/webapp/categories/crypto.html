@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="../images/crypto_category_banner.png" alt="Crypto 카테고리 대표 이미지" class="category-banner">
+    <h1>Crypto 카테고리</h1>
+  <nav>
+  <ul  class="category-nav">
+  	<a href="../index.html">Home</a>
+    <a href="web.html">Web</a>
+    <a href="pwn.html">Pwn</a>
+    <a href="reversing.html">Reversing</a>
+    <a href="forensics.html">Forensics</a>
+    <a href="network.html">Network</a>
+    <a href="misc.html">Misc</a>
+    <a href="crypto.html" class="active">Crypto</a>
+  	<button id="darkmode-toggle">다크모드</button>
+  </ul>
+  </nav>
+  </header>
+  <main>
+	<section>
+	  <h2 class="section-title center">주요 문제 유형 & 공략법</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>클래식 암호</h3>
+	      <div><b>정의:</b> Caesar, Vigenère, Substitution 등 고전 암호를 해독하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>암호문, 평문 일부, 키워드 등 단서 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>빈도 분석, 키워드 추정, 온라인 복호화 도구 활용</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>현대 암호/암호화 알고리즘</h3>
+	      <div><b>정의:</b> RSA, AES, DES 등 현대 암호 알고리즘의 취약점을 이용하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>키 길이 짧음, 공개키/평문/암호문 일부 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>수학적 취약점(소인수분해, 오라클 공격 등) 활용</li>
+	          <li>온라인/오픈소스 도구 활용</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>해시/무결성</h3>
+	      <div><b>정의:</b> 해시값을 역산하거나, 해시 충돌을 유도하는 문제</div>
+	      <div><b>공격 가능한 조건:</b>
+	        <ul>
+	          <li>해시 알고리즘, 해시값, 평문 일부 제공</li>
+	        </ul>
+	      </div>
+	      <div><b>공격 방법:</b>
+	        <ul>
+	          <li>사전 공격, 무차별 대입, rainbow table, hashcat 등 활용</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+	
+	<section>
+	  <h2 class="section-title center">주요 도구 & 툴</h2>
+	  <ul class="writeup-list">
+	    <li>
+	      <h3>hashcat / John the Ripper</h3>
+	      <div><b>설명:</b> 다양한 해시 알고리즘에 대한 사전/브루트포스 공격 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>다양한 해시 알고리즘 지원, GPU 가속</li>
+	          <li>사전/규칙/마스크/조합 공격</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>패스워드 해시, 플래그 해시 복호화</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>RSAtool / RsaCtfTool</h3>
+	      <div><b>설명:</b> RSA 암호문, 공개키, 평문 등으로 다양한 공격을 자동화하는 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>소인수분해, Wiener, Hastad, Franklin-Reiter 등 다양한 RSA 공격</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>RSA 문제에서 키/평문/암호문 추출</li>
+	        </ul>
+	      </div>
+	    </li>
+	    <li>
+	      <h3>CyberChef</h3>
+	      <div><b>설명:</b> 다양한 인코딩, 암호화, 해시, 변환 기능을 제공하는 온라인 도구</div>
+	      <div><b>주요 기능:</b>
+	        <ul>
+	          <li>Base64, Hex, ROT13, XOR, 해시 등 다양한 연산 지원</li>
+	        </ul>
+	      </div>
+	      <div><b>활용 예시:</b>
+	        <ul>
+	          <li>암호문/평문 변환, 해시 계산, 암호화/복호화 테스트</li>
+	        </ul>
+	      </div>
+	    </li>
+	  </ul>
+	</section>
+  </main>
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

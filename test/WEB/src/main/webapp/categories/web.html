@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Web 카테고리 - CTF 실전 자료실</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="../images/web_category_banner.png" alt="Web 카테고리 대표 이미지" class="category-banner">
+    <h1>Web 카테고리</h1>
+	  <nav>
+	  <ul  class="category-nav">
+	  	<a href="../index.html">Home</a>
+	    <a href="web.html" class="active">Web</a>
+	    <a href="pwn.html">Pwn</a>
+	    <a href="reversing.html">Reversing</a>
+	    <a href="forensics.html">Forensics</a>
+	    <a href="network.html">Network</a>
+	    <a href="misc.html">Misc</a>
+	    <a href="crypto.html">Crypto</a>
+	  	<button id="darkmode-toggle">다크모드</button>
+	  </ul>
+	  </nav>
+  </header>
+	  <main>
+	  <section>
+	    <h2 class="section-title center">주요 문제 유형 & 공략법</h2>
+	    <ul class="writeup-list">
+	      <li>
+	        <h3>SQL Injection</h3>
+	        <div><b>정의:</b> 웹 애플리케이션의 입력값이 SQL 쿼리에 직접 삽입되어, 공격자가 쿼리를 조작할 수 있는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>입력값 검증/필터링이 미흡한 로그인, 검색, 게시판 등</li>
+	            <li>입력값이 DB 쿼리에 직접 사용되는 경우</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>입력창에 <code>' OR 1=1 --</code> 등 SQL 구문 삽입</li>
+	            <li>Blind SQLi: 참/거짓에 따라 페이지 반응을 분석</li>
+	            <li>Union-based: <code>UNION SELECT</code>로 데이터 추출</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>XSS (Cross-Site Scripting)</h3>
+	        <div><b>정의:</b> 악성 스크립트가 웹 페이지에 삽입되어 사용자의 세션/정보를 탈취할 수 있는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>사용자 입력이 필터링 없이 HTML에 반영되는 경우</li>
+	            <li>댓글, 게시판, URL 파라미터 등 동적 콘텐츠</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>입력값에 <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> 등 삽입</li>
+	            <li>쿠키 탈취, 세션 탈취, 피싱 페이지 유도 등</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>File Upload</h3>
+	        <div><b>정의:</b> 파일 업로드 기능에서 필터링 미흡으로 웹쉘 등 악성 파일이 업로드되는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>확장자/콘텐츠 타입 검증이 불충분한 업로드 기능</li>
+	            <li>업로드 파일이 웹에서 실행/접근 가능할 때</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>우회 기법(.php.jpg, .ph%00p 등)으로 웹쉘 업로드</li>
+	            <li>업로드된 파일 경로로 직접 접근하여 명령 실행</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>Directory Traversal</h3>
+	        <div><b>정의:</b> 파일 경로 조작을 통해 서버 내 임의 파일에 접근하는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>파일명에 <code>../</code> 등 상대경로가 필터링되지 않는 경우</li>
+	            <li>다운로드/이미지 뷰어 등에서 파일명을 입력받을 때</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>입력값에 <code>../../../../etc/passwd</code> 등 삽입</li>
+	            <li>서버 내 중요한 파일 노출/다운로드</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>Authentication Bypass</h3>
+	        <div><b>정의:</b> 인증 로직의 허점을 이용해 비정상적으로 로그인을 우회하는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>약한 비밀번호, 디폴트 계정, 인증 우회 로직</li>
+	            <li>세션/쿠키 조작, 파라미터 변조</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>SQLi, 논리 오류, 세션 고정 등 다양한 방식으로 인증 우회</li>
+	            <li>관리자 페이지 접근, 권한 상승</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>SSRF (Server-Side Request Forgery)</h3>
+	        <div><b>정의:</b> 서버가 공격자가 지정한 URL로 요청을 보내도록 유도하는 취약점</div>
+	        <div><b>공격 가능한 조건:</b>
+	          <ul>
+	            <li>이미지/URL 다운로드 등 서버가 외부 요청을 수행하는 기능</li>
+	            <li>내부망/로컬 주소 필터링 미흡</li>
+	          </ul>
+	        </div>
+	        <div><b>공격 방법:</b>
+	          <ul>
+	            <li>입력값에 <code>http://localhost/admin</code> 등 내부 주소 지정</li>
+	            <li>클라우드 메타데이터, 내부 서비스 접근</li>
+	          </ul>
+	        </div>
+	      </li>
+	    </ul>
+	  </section>
+	
+	  <section>
+	    <h2 class="section-title center">주요 도구 & 툴</h2>
+	    <ul class="writeup-list">
+	      <li>
+	        <h3>Burp Suite</h3>
+	        <div><b>설명:</b> 웹 프록시로 모든 HTTP/S 트래픽을 가로채고, 요청/응답을 자유롭게 수정할 수 있는 해킹/침투 테스트 도구</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>Proxy: 실시간 요청/응답 가로채기 및 수정</li>
+	            <li>Repeater: 요청 반복/변경 테스트</li>
+	            <li>Intruder: 자동화된 파라미터 공격, 브루트포싱</li>
+	            <li>Decoder: 인코딩/디코딩, 해시 변환</li>
+	            <li>Scanner: 취약점 자동 탐지(유료)</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>로그인 우회, SQLi/XSS 페이로드 테스트, 파일 업로드 조작 등 다양한 웹 해킹 실습에 필수</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>OWASP ZAP</h3>
+	        <div><b>설명:</b> 오픈소스 웹 취약점 진단 도구로, Burp Suite와 유사한 기능 제공</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>자동/수동 스캔, 프록시, 파라미터 조작, 페이로드 자동화</li>
+	            <li>다양한 플러그인과 커뮤니티 지원</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>무료로 웹 취약점 진단을 체험하고 싶은 초보자에게 적합</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>SQLMap</h3>
+	        <div><b>설명:</b> SQL Injection 자동 탐지 및 익스플로잇 도구</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>다양한 DBMS 지원, 데이터베이스 구조 자동 추출</li>
+	            <li>DB 계정, 테이블, 컬럼, 데이터 자동 덤프</li>
+	            <li>블라인드/에러 기반/Union 기반 등 다양한 공격 지원</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>SQLi가 의심되는 URL을 입력하면 자동으로 공격 및 데이터 추출</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>Postman</h3>
+	        <div><b>설명:</b> REST API 테스트 및 자동화 도구</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>HTTP 요청 생성/전송, 파라미터/헤더/바디 자유 조작</li>
+	            <li>API 시나리오 자동화, 응답 분석</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>API 인증 우회, SSRF, 파라미터 변조 등 테스트에 활용</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>Dirbuster / Dirsearch</h3>
+	        <div><b>설명:</b> 웹 서버의 숨겨진 디렉토리/파일을 브루트포싱으로 찾는 도구</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>워드리스트 기반 디렉토리/파일 탐색</li>
+	            <li>응답 코드/길이 분석으로 존재 여부 판단</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>admin, .git, 백업파일 등 숨겨진 경로 찾기</li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <h3>CyberChef</h3>
+	        <div><b>설명:</b> 다양한 인코딩, 디코딩, 암호화, 변환을 웹에서 쉽게 할 수 있는 도구</div>
+	        <div><b>주요 기능:</b>
+	          <ul>
+	            <li>Base64, URL, Hex, ROT13 등 다양한 변환 지원</li>
+	            <li>여러 변환을 조합하여 한 번에 처리 가능</li>
+	          </ul>
+	        </div>
+	        <div><b>활용 예시:</b>
+	          <ul>
+	            <li>문제에서 받은 인코딩/암호화 데이터를 빠르게 복호화</li>
+	          </ul>
+	        </div>
+	      </li>
+	    </ul>
+	  </section>
+	</main>
+
+  <footer>
+    <p>© 2025 CTF 실전 자료실</p>
+  </footer>
+</body>
+</html>

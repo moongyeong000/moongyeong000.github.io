@@ -1,0 +1,326 @@
+/* ===== 기본 스타일 ===== */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== 헤더/푸터 & nav ===== */
+header, footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+header {
+  position: relative;
+  padding: 1rem 0 0 0;
+}
+footer {
+  padding: 1rem 0;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background: #fff;
+  color: #222;
+  border: none;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== 카테고리 메뉴 ===== */
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1.5rem 0;
+}
+.category-nav li {
+  display: inline-block;
+}
+.category-nav a {
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.3em 0.7em;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  display: inline-block;
+}
+.category-nav a.active,
+.category-nav a:hover {
+  background: #e0eaff;
+  color: #222;
+}
+
+/* ===== 다크모드 전체 적용 ===== */
+body.dark-mode {
+  background: #18191c;
+  color: #e0e0e0;
+}
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode header nav {
+  background: #18191c !important;
+  color: #fff !important;
+}
+body.dark-mode header nav {
+  background: #18191c !important;
+}
+body.dark-mode .category-nav a {
+  color: #fff !important;
+}
+body.dark-mode .category-nav a.active,
+body.dark-mode .category-nav a:hover {
+  background: #333;
+  color: #fff !important;
+}
+body.dark-mode .main-list li,
+body.dark-mode .writeup-list li {
+  background: #232323;
+  color: #e0e0e0;
+}
+body.dark-mode .tool-output {
+  background: #23232a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+body.dark-mode main,
+body.dark-mode section {
+  background: #18191c;
+}
+
+/* ===== 다크모드 버튼 ===== */
+#darkmode-toggle {
+  padding: 6px 14px;
+  font-size: 1.1em;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  height: 34px;
+}
+#darkmode-toggle:hover {
+  background: #555;
+}
+body.dark-mode #darkmode-toggle {
+  background: #eee;
+  color: #222;
+}
+
+/* ===== 제목/섹션 ===== */
+.section-title.center, h2.center {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ===== 리스트 ===== */
+.main-list, .writeup-list {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  list-style: none;
+}
+.main-list li, .writeup-list li {
+  background: #fff;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== 강조 박스 (카테고리별로 응용 가능) ===== */
+.tip-box, .web-tip, .warning-box, .web-warning {
+  padding: 0.9em 1.2em;
+  margin: 1.2em 0;
+  border-radius: 8px;
+  font-size: 1.05em;
+}
+.tip-box, .web-tip {
+  background: #e0f7fa;
+  color: #0277bd;
+  border-left: 5px solid #0288d1;
+}
+.warning-box, .web-warning {
+  background: #fff3e0;
+  color: #e65100;
+  border-left: 5px solid #ff9800;
+}
+
+/* ===== 이미지 및 도구 ===== */
+.example-img, .tool-icon, .tool-guide-img, .flowchart-img {
+  display: block;
+  margin: 0.5rem auto 1rem auto;
+  max-width: 90%;
+  height: auto;
+}
+
+/* ===== 카테고리 배너 ===== */
+header img.main-banner, .category-banner {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16/5;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px #0002;
+  background: #222;
+}
+
+/* ===== 플로우차트 ===== */
+.flowchart-img {
+  display: block;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+}
+
+/* ===== 도구/실습 폼 ===== */
+.tool-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-width: 480px;
+  margin: 1.5rem auto;
+}
+.tool-form textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+.tool-form select, .tool-form button {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+.tool-output {
+  background: #f1f3f6;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em auto;
+  max-width: 480px;
+  word-break: break-all;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== 드래그 앤 드롭 실습/힌트 ===== */
+.drag-item, .drag-hint {
+  width: 220px;
+  margin: 2rem auto 1rem auto;
+  padding: 14px;
+  background: #eee;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  cursor: grab;
+  user-select: none;
+  transition: background 0.2s;
+}
+.drag-hint:active, .drag-item:active {
+  background: #ddeeff;
+}
+.drop-zone {
+  width: 320px;
+  height: 90px;
+  border: 2px dashed #007bff;
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+  line-height: 90px;
+  border-radius: 8px;
+  background: #f5faff;
+}
+.hidden-content {
+  display: none;
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  background: #eaffea;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* ===== 반응형 미디어 쿼리 ===== */
+@media (max-width: 900px) {
+  header nav {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.5rem 0;
+  }
+  .category-nav {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .main-list, .writeup-list {
+    max-width: 98vw;
+    padding: 0 0.5rem;
+  }
+  header img.main-banner, .category-banner {
+    max-width: 98vw;
+    aspect-ratio: 16/7;
+  }
+  .flowchart-img {
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  #darkmode-toggle {
+    padding: 4px 10px;
+    font-size: 1em;
+    height: 28px;
+  }
+}
+@media (max-width: 480px) {
+  header, footer {
+    padding: 0.7rem 0;
+    font-size: 0.97em;
+  }
+  .category-nav {
+    gap: 0.5rem;
+    font-size: 0.96em;
+    flex-wrap: wrap;
+  }
+  header img.main-banner, .category-banner {
+    max-width: 99vw;
+    aspect-ratio: 16/8;
+  }
+  .flowchart-img {
+    max-width: 99vw;
+  }
+  .main-list li, .writeup-list li {
+    padding: 0.7rem 0.7rem;
+    font-size: 0.97em;
+  }
+  .tool-form, .tool-output {
+    max-width: 99vw;
+    padding: 0.2em;
+  }
+}
