@@ -12,24 +12,35 @@
     <h1>My Security Portfolio</h1>
   </header>
   <main>
-    <!-- 자기소개와 희망 직무 -->
     <section id="about">
       <h2>소개</h2>
       <p>
-        안녕하세요. 컴퓨터공학과 2학년, 공격형 해킹 기업에서 레드팀/취약점 분석 전문가를 꿈꾸는 OOO입니다.<br>
-        실습과 자동화, 실제 공격 시나리오를 통한 성장에 집중하고 있습니다.
+        안녕하세요. 한남대학교 컴퓨터공학과 2학년, 공격형 해킹 기업에서 레드팀/취약점 분석 전문가를 꿈꾸는 정문경입니다.
       </p>
-      <button id="toggle-motivation">더보기</button>
+      <button id="toggle-motivation">tmi</button>
       <div id="motivation" style="display:none;">
         <p>
-          저는 단순히 이론이나 문제풀이에 그치지 않고, 실제 시스템과 웹 환경에서 발생하는 보안 취약점을 직접 실습하고 분석하는 과정에서 큰 흥미와 성장 동기를 느꼈습니다.<br>
-          실전 해킹과 모의해킹, 취약점 분석을 통해 보안의 본질을 이해하고, 실제로 조직의 자산을 지키는 레드팀 전문가가 되고 싶습니다.<br>
-          또한, 자동화 도구 개발과 공격 시나리오 재현을 통해 실무적인 역량을 키우고자 합니다.
+          <h3>코딩을 시작하게 된 계기</h3><br>
+           제 첫 코딩은 중학교 2학년 당시 수학 선생님의 권유로 하루에 30분씩
+          알고리즘을 배우던 것에서 시작했습니다. 정보 올림피아드에 나갈 사람을
+          구하고 계셨었고 운 좋게 눈에 띄어 배웠지만 그 당시에는 별 생각이 없었습니다.
+          고등학교 진학 후 정보 과목에서 제대로 배워보며, 이 길이 내 길이구나를 직감했습니다.
+          다른 아이들에 비해 잘하는 유일한 과목이었기 때문입니다.
+           하지만 혼자의 힘으로는 정보 수집부터 공부하는 방법과 무엇을 공부해야하는지, 
+          어디서 정보나 연습이 가능한지 모든 걸 몰랐기에 대학 진학 후 진짜 코딩을 해봤다고 생각합니다.
+          (코드업 100제를 풀어봤으나 기초 수준들이기에 큰 성장은 느끼지 못했습니다.)<br>
+          <h2>보안 전문가를 선택한 이유</h2><br>
+          예전부터 남을 도우며 사는 것이 꿈이었습니다. 그렇기에 초등학교 떄는 변호사, 
+          중학교 떄는 군인이었다가 고등학교 2학년 끝 무렵에 보안 전문가라는 길을 
+          선택했습니다. 코딩을 조금 잘했지만 자신이 없어 안정적인 군인을 하려 했으나
+          코딩이 생각보다 재미있고, 즐기면서 일 할 수 있겠다는 생각이 들어 진로를 
+          변경했습니다. 개발자가 아닌 보안 전문가인 이유는 나를 희생해 남을 돕는다는 
+          제 희망에 더 가까웠고, 당시에도 인터넷상에서의 불법적인 일들이 너무나 많이 
+          일어나고 있었기에 이를 막고자 선택하게 되었습니다.
         </p>
       </div>
     </section>
 
-    <!-- 나의 스킬 -->
     <section id="skills">
       <h2>나의 스킬</h2>
       <ul>
@@ -46,7 +57,6 @@
       </ul>
     </section>
 
-    <!-- 프로젝트 -->
     <section id="projects">
       <h2>프로젝트</h2>
       <ul>
@@ -58,19 +68,30 @@
       </ul>
     </section>
 
-    <!-- 공격법 검색 섹션 -->
     <section id="attack-search">
       <h2>공격법 검색</h2>
-      <p>아래 검색창에 XSS, 시스템 명령어 삽입, 검색 최적화 조작 등 공격 기법 이름을 입력해보세요.</p>
-      <input type="text" id="attack-input" placeholder="공격법 이름을 입력하세요 (예: XSS)">
+      <p>
+        아래는 검색 가능한 공격 기법 목록입니다.<br>
+        <strong>공격 기법을 입력하면 복붙 가능한 코드가 나오고, 해당 코드를 입력하면 공격에 대한 설명이 나옵니다.</strong>
+      </p>
+      <div class="attack-list">
+        <span>XSS</span>
+        <span>시스템 명령어 삽입</span>
+        <span>검색 최적화 조작</span>
+      </div>
+      <input type="text" id="attack-input" placeholder="공격 기법 이름을 입력하세요 (예: XSS)">
       <button id="attack-search-btn">검색</button>
-      <div id="attack-result"></div>
+      <div id="attack-code" style="margin-top:10px;"></div>
+      <input type="text" id="attack-payload" placeholder="복붙 코드를 입력하세요" style="display:none;">
+      <button id="attack-payload-btn" style="display:none;">공격 실행</button>
+      <div id="attack-desc" style="margin-top:10px;"></div>
     </section>
 
-    <!-- 로그인 실습 -->
     <section id="login-lab">
       <h2>로그인 실습</h2>
-      <p>SQL Injection 또는 URL 파라미터 조작(예: ?manager=true)으로 인증 우회 실습이 가능합니다.</p>
+      <p>
+        SQL Injection 또는 URL 파라미터 조작(예: <code>?manager=true</code>)으로 인증 우회 실습이 가능합니다.
+      </p>
       <form id="login-form">
         <input type="text" id="login-user" placeholder="아이디" required>
         <input type="password" id="login-pass" placeholder="비밀번호" required>
@@ -79,7 +100,6 @@
       <div id="login-result"></div>
     </section>
 
-    <!-- admin/main 페이지 SQL Injection -->
     <section id="admin-page" style="display:none;">
       <h2>관리자 페이지 (SQL Injection)</h2>
       <p>
@@ -87,7 +107,7 @@
         <b>SQL Injection이란?</b><br>
         사용자 입력값이 SQL 쿼리에 그대로 삽입되어 인증 우회, 데이터 탈취, 시스템 명령 실행 등 다양한 공격이 가능합니다.<br>
         <b>예시 페이로드:</b> <code>' OR 1=1 --</code><br>
-        <b>대응 방안:</b> 입력값 검증, Prepared Statement 사용 등<br>
+        <b>대응 방안:</b> 입력값 검증, Prepared Statement 사용 등
       </p>
       <hr>
       <h3>CSRF(사이트 간 요청 위조)란?</h3>
@@ -97,7 +117,6 @@
       </p>
     </section>
 
-    <!-- manager 페이지 URL 파라미터 우회 시 -->
     <section id="manager-page" style="display:none;">
       <h2>매니저 페이지 (URL 파라미터 우회)</h2>
       <p>
@@ -113,8 +132,8 @@
     <section id="contact">
       <h2>연락처</h2>
       <ul>
-        <li>Email: abdm1613@email.com</li>
-        <li>GitHub: <a href="https://github.com/moongyeong000" target="_blank">github.com/moongyeong000</a></li>
+        <li>Email: abcm1613@email.com</li>
+        <li>GitHub: <a href="https://github.com/moongueong000" target="_blank">github.com/moongyeong000</a></li>
       </ul>
     </section>
   </main>
