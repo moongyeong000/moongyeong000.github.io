@@ -3,17 +3,17 @@ document.getElementById('toggle-motivation').addEventListener('click', function(
   const moti = document.getElementById('motivation');
   if (moti.style.display === 'none') {
     moti.style.display = 'block';
-    this.textContent = '접기';
+    this.textContent = 'tmi 접기';
   } else {
     moti.style.display = 'none';
-    this.textContent = '더보기';
+    this.textContent = 'tmi 보기';
   }
 });
 
 // 공격법 데이터 정의
 const attackData = {
   'xss': {
-    code: `<script>alert('XSS')</script>`,
+    code: `&#6script>alert('XSS')&#6/script>`,
     desc: `XSS(Cross Site Scripting)는 사용자의 입력값이 필터링 없이 웹페이지에 출력되어, 악의적인 스크립트가 실행되는 취약점입니다.<br>
     <b>예시 코드:</b> <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code><br>
     <b>대응 방안:</b> 입력값 필터링, 출력 시 이스케이프 처리, CSP 적용 등`
@@ -25,7 +25,7 @@ const attackData = {
     <b>대응 방안:</b> 입력값 검증, 쉘 명령어 직접 실행 금지, 최소 권한 원칙 적용 등`
   },
   '검색 최적화 조작': {
-    code: `<a href="https://malicious.com">무료 쿠폰</a>`,
+    code: `&#60a href="https://malicious.com">무료 쿠폰/&#60a>`,
     desc: `검색 최적화 조작(SEO Manipulation)은 검색 결과에 노출되도록 악성 링크/키워드를 삽입하는 기법입니다.<br>
     <b>예시 코드:</b> <code>&lt;a href="https://malicious.com"&gt;무료 쿠폰&lt;/a&gt;</code><br>
     <b>대응 방안:</b> 사용자 입력값 검증, 허용 태그 제한, 정기적 모니터링 등`

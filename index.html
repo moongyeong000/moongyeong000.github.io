@@ -17,7 +17,7 @@
       <p>
         안녕하세요. 한남대학교 컴퓨터공학과 2학년, 공격형 해킹 기업에서 레드팀/취약점 분석 전문가를 꿈꾸는 정문경입니다.
       </p>
-      <button id="toggle-motivation">tmi</button>
+      <button id="toggle-motivation">tmi 보기</button>
       <div id="motivation" style="display:none;">
         <p>
           <h3>코딩을 시작하게 된 계기</h3><br>
@@ -29,7 +29,7 @@
            하지만 혼자의 힘으로는 정보 수집부터 공부하는 방법과 무엇을 공부해야하는지, 
           어디서 정보나 연습이 가능한지 모든 걸 몰랐기에 대학 진학 후 진짜 코딩을 해봤다고 생각합니다.
           (코드업 100제를 풀어봤으나 기초 수준들이기에 큰 성장은 느끼지 못했습니다.)<br>
-          <h2>보안 전문가를 선택한 이유</h2><br>
+          <h3>보안 전문가를 선택한 이유</h3><br>
           예전부터 남을 도우며 사는 것이 꿈이었습니다. 그렇기에 초등학교 떄는 변호사, 
           중학교 떄는 군인이었다가 고등학교 2학년 끝 무렵에 보안 전문가라는 길을 
           선택했습니다. 코딩을 조금 잘했지만 자신이 없어 안정적인 군인을 하려 했으나
@@ -42,20 +42,19 @@
     </section>
 
     <section id="skills">
-      <h2>나의 스킬</h2>
-      <ul>
-        <li>웹 취약점 분석 및 실습 (SQL Injection, XSS, CSRF 등)</li>
-        <li>CTF(해킹 대회) 참가 및 문제 풀이 경험</li>
-        <li>시스템 해킹 기초 (권한 상승, 파일 권한, 프로세스 분석)</li>
-        <li>암호학 기초 (암호 알고리즘, 해시 함수 등)</li>
-        <li>리버스 엔지니어링 기초 (바이너리 분석, 문자열 추출 등)</li>
-        <li>Python, C, Java, JavaScript 코드 해석</li>
-        <li>HTML/CSS/JavaScript 웹페이지 제작</li>
-        <li>Git/GitHub 사용 경험</li>
-        <li>리눅스 환경 활용 (파일, 패키지, 프로세스 관리)</li>
-        <li>가상 머신 운영 (VMware, VirtualBox)</li>
-      </ul>
-    </section>
+  <h2>나의 스킬</h2>
+  <ul>
+    <li><b>Python, C, JavaScript</b>로 자동화 스크립트, PoC, 웹페이지 개발 가능</li>
+    <li><b>SQL Injection, XSS, CSRF 등 주요 웹 취약점</b> 분석 및 공격/방어 실습 역량</li>
+    <li><b>Burp Suite, OWASP ZAP</b> 등 보안 도구를 활용한 웹 취약점 진단</li>
+    <li><b>Ghidra, IDA</b>를 활용한 바이너리 분석 및 리버스 엔지니어링 기초</li>
+    <li><b>리눅스 기반 해킹 실습 환경 직접 구축 및 운영</b> (가상 머신 포함)</li>
+    <li><b>시스템 해킹 기초</b> (권한 상승, 파일/프로세스 분석, 취약 서비스 악용)</li>
+    <li><b>암호학 기초</b> (해시, 대칭/비대칭 암호, 암호화/복호화 스크립트 작성)</li>
+    <li><b>네트워크 패킷 분석</b> (Wireshark, tcpdump 등 활용)</li>
+  </ul>
+</section>
+
 
     <section id="projects">
       <h2>프로젝트</h2>
@@ -90,7 +89,7 @@
     <section id="login-lab">
       <h2>로그인 실습</h2>
       <p>
-        SQL Injection 또는 URL 파라미터 조작(예: <code>?manager=true</code>)으로 인증 우회 실습이 가능합니다.
+        SQL Injection(' OR 1=1 --) 또는 URL 파라미터 조작(예: <code>?manager=true</code>)으로 인증 우회 실습이 가능합니다.
       </p>
       <form id="login-form">
         <input type="text" id="login-user" placeholder="아이디" required>
@@ -124,16 +123,13 @@
         <b>개념:</b> URL에 <code>?manager=true</code> 등 특정 파라미터를 추가해 인증/인가를 우회하는 공격<br>
         <b>대응 방안:</b> 서버단 인증/인가 로직 필수, 관리자 페이지 별도 인증/접근제어
       </p>
-      <div class="warning">
-        <b>경고:</b> 실제 서비스에서는 이런 취약점이 존재하지 않도록 반드시 서버단에서 권한을 체크해야 합니다.
-      </div>
     </section>
 
     <section id="contact">
       <h2>연락처</h2>
       <ul>
-        <li>Email: abcm1613@email.com</li>
-        <li>GitHub: <a href="https://github.com/moongueong000" target="_blank">github.com/moongyeong000</a></li>
+        <li>Email: abcm1613@gmail.com</li>
+        <li>GitHub: <a href="https://github.com/moongyeong000" target="_blank">github.com/moongyeong000</a></li>
       </ul>
     </section>
   </main>
