@@ -1,0 +1,117 @@
+body {
+  font-family: '맑은 고딕', Arial, sans-serif;
+  background: #181c20;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #23272c;
+  color: #fff;
+  padding: 24px 0 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #55c2ff;
+}
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #23272c;
+  padding: 32px 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #0007;
+}
+
+section {
+  margin-bottom: 36px;
+}
+
+h2 {
+  color: #55c2ff;
+  margin-bottom: 12px;
+}
+
+h3 {
+  color: #a0d8ff;
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style: disc inside;
+  padding-left: 16px;
+}
+
+a {
+  color: #55c2ff;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 18px 0;
+  background: #181c20;
+  color: #aaa;
+  font-size: 0.95em;
+}
+
+.attack-lab-info {
+  background: #222b36;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: #c8e6ff;
+}
+
+.attack-method-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.attack-method-list li {
+  background: #2d3238;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1em;
+  margin-bottom: 6px;
+}
+
+.attack-lab-actions {
+  margin-top: 18px;
+}
+
+.attack-lab-actions button {
+  background: #55c2ff;
+  color: #23272c;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: not-allowed;
+  opacity: 0.7;
+  margin-right: 10px;
+}
