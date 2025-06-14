@@ -76,6 +76,7 @@ footer {
 }
 
 #toggle-motivation{
+  display:block;
   background: none;
   border: none;
   color: #a0d8ff;
