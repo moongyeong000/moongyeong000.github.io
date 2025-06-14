@@ -76,7 +76,7 @@ footer {
   font-size: 0.95em;
 }
 
-#toggle-motivation{
+.toggle-motivation{
     background: none;
     border: none;
     color: #065fd4;
