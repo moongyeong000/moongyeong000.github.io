@@ -7,21 +7,25 @@ body {
 }
 
 header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #23272c;
   color: #fff;
   padding: 24px 0 10px 0;
-  text-align: center;
 }
 
 #home{
   position: absolute;
-  top: 24px;
   left: 20px;
   color: #fff;
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 header h1 {
