@@ -24,11 +24,11 @@ https://moongyeong000.github.io/
 |기능 제목|설명|코드 위치|코드 설명|
 |-----------------------------------|----------------------------------------------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------------|
 | 자기소개/지원동기(TMI) 토글 | 자기소개 및 지원동기를 버튼으로 열고 닫을 수 있음 | index.html:16, main.js:1| #toggle-motivation 버튼 클릭 시 #motivation 영역을 show/hide, 버튼 텍스트 변경|
-| 공격법 검색/실습 기능| XSS, 시스템 명령어 삽입, 검색 최적화 조작 등 주요 공격 기법을 검색/코드 입력/설명 제공 | practice.html:10, practice.js:1| #attack-search 섹션, 입력값에 따라 복붙 코드/공격 원리/대응 방안 안내 |
-| 로그인(SQL Injection) 실습 | SQL Injection 원리를 이용해 인증 우회 실습 가능 | practice.html:27, practice.js:41| 로그인 폼에 `' OR 1=1 --` 입력 시 SQL 쿼리의 인증 조건이 항상 참이 되어 관리자 페이지로 이동 |
-| 관리자 페이지(SQL Injection)      | SQL Injection 성공 시 관리자 전용 페이지 노출, 공격 원리 및 대응 방안 상세 설명| practice.html:38, practice.js:56| showSection('admin') 호출 시 #admin-page 표시, SQL Injection 원리/예시/대응방안 안내|
-| 로그인(URL 파라미터 인가 우회) 실습| URL 파라미터(manager=true) 조작을 통한 인가 우회 실습 가능| practice.html:27, practice.js:56| 로그인 실패 후 URL에 ?manager=true 추가 시 매니저 페이지로 이동|
-| 매니저 페이지(인가 우회)| URL 파라미터 조작 성공 시 매니저 전용 페이지 노출, 공격 원리 및 대응 방안 상세 설명      | practice.html:52, practice.js:56| showSection('manager') 호출 시 #manager-page 표시, 인가 우회 원리/대응방안 안내|
+| 공격법 검색/실습 기능| XSS, 시스템 명령어 삽입, 검색 최적화 조작 등 주요 공격 기법을 검색/코드 입력/설명 제공 | practice.html:16, practice.js:1| #attack-search 섹션, 입력값에 따라 복붙 코드/공격 원리/대응 방안 안내 |
+| 로그인(SQL Injection) 실습 | SQL Injection 원리를 이용해 인증 우회 실습 가능 | practice.html:36, practice.js:34| 로그인 폼에 `' OR 1=1 --` 입력 시 SQL 쿼리의 인증 조건이 항상 참이 되어 관리자 페이지로 이동 |
+| 관리자 페이지(SQL Injection)      | SQL Injection 성공 시 관리자 전용 페이지 노출, 공격 원리 및 대응 방안 상세 설명| practice.html:49, practice.js:95| showSection('admin') 호출 시 #admin-page 표시, SQL Injection 원리/예시/대응방안 안내|
+| 로그인(URL 파라미터 인가 우회) 실습| URL 파라미터(manager=true) 조작을 통한 인가 우회 실습 가능| practice.html:36, practice.js:72| 로그인 실패 후 URL에 ?manager=true 추가 시 매니저 페이지로 이동|
+| 매니저 페이지(인가 우회)| URL 파라미터 조작 성공 시 매니저 전용 페이지 노출, 공격 원리 및 대응 방안 상세 설명      | practice.html:68, practice.js:95| showSection('manager') 호출 시 #manager-page 표시, 인가 우회 원리/대응방안 안내|
 
 
 ## 기타
