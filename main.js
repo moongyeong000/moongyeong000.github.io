@@ -1,19 +1,13 @@
-// 더보기 버튼 토글
-document.querySelectorAll('.toggle-motivation-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    const content = btn.nextElementSibling;
-    if (content && content.classList.contains('motivation-content')) {
-      if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-        btn.textContent = "접기";
-      } else {
-        content.style.display = "none";
-        btn.textContent = "더보기";
-      }
-    }
-  });
+document.getElementById('toggle-motivation').addEventListener('click', function() {
+  const moti = document.getElementById('motivation');
+  if (moti.style.display === 'none') {
+    moti.style.display = 'block';
+    this.textContent = 'tmi 접기';
+  } else {
+    moti.style.display = 'none';
+    this.textContent = 'tmi 보기';
+  }
 });
-
 
 const attackData = {
   'xss': {
@@ -35,7 +29,6 @@ const attackData = {
     <b>대응 방안:</b> 사용자 입력값 검증, 허용 태그 제한, 정기적 모니터링 등`
   }
 };
-
 
 const attackInput = document.getElementById('attack-input');
 const attackSearchBtn = document.getElementById('attack-search-btn');
@@ -66,7 +59,6 @@ attackSearchBtn.addEventListener('click', function() {
   }
 });
 
-
 attackPayloadBtn.addEventListener('click', function() {
   const value = attackInput.value.trim().toLowerCase();
   let found = null;
@@ -83,7 +75,6 @@ attackPayloadBtn.addEventListener('click', function() {
   }
 });
 
-
 const loginForm = document.getElementById('login-form');
 const loginUser = document.getElementById('login-user');
 const loginPass = document.getElementById('login-pass');
@@ -91,14 +82,12 @@ const loginResult = document.getElementById('login-result');
 const adminPage = document.getElementById('admin-page');
 const managerPage = document.getElementById('manager-page');
 
-
 window.addEventListener('DOMContentLoaded', function() {
   const params = new URLSearchParams(window.location.search);
   if (params.has('manager') && params.get('manager') === 'true') {
     showSection('manager');
   }
 });
-
 
 loginForm.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -108,7 +97,6 @@ loginForm.addEventListener('submit', function(e) {
     loginResult.innerHTML = `<span style="color:#ff8080;">로그인 실패! SQL Injection 또는 URL 파라미터 우회를 시도해보세요.</span>`;
   }
 });
-
 
 function showSection(type) {
   adminPage.style.display = 'none';
