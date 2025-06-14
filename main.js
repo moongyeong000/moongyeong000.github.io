@@ -1,16 +1,20 @@
-// 더보기 버튼(동기/이유) 토글
-document.getElementById('toggle-motivation').addEventListener('click', function() {
-  const moti = document.getElementById('motivation');
-  if (moti.style.display === 'none') {
-    moti.style.display = 'block';
-    this.textContent = 'tmi 접기';
-  } else {
-    moti.style.display = 'none';
-    this.textContent = 'tmi 보기';
-  }
+// 더보기 버튼 토글
+document.querySelectorAll('.toggle-motivation-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const content = btn.nextElementSibling;
+    if (content && content.classList.contains('motivation-content')) {
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        btn.textContent = "접기";
+      } else {
+        content.style.display = "none";
+        btn.textContent = "더보기";
+      }
+    }
+  });
 });
 
-// 공격법 데이터 정의
+
 const attackData = {
   'xss': {
     code: `&#6script>alert('XSS')&#6/script>`,
@@ -32,7 +36,7 @@ const attackData = {
   }
 };
 
-// 공격법 검색 및 코드/설명 출력
+
 const attackInput = document.getElementById('attack-input');
 const attackSearchBtn = document.getElementById('attack-search-btn');
 const attackCodeDiv = document.getElementById('attack-code');
@@ -62,7 +66,7 @@ attackSearchBtn.addEventListener('click', function() {
   }
 });
 
-// 공격 코드 입력 후 설명 출력
+
 attackPayloadBtn.addEventListener('click', function() {
   const value = attackInput.value.trim().toLowerCase();
   let found = null;
@@ -79,7 +83,7 @@ attackPayloadBtn.addEventListener('click', function() {
   }
 });
 
-// 로그인 실습
+
 const loginForm = document.getElementById('login-form');
 const loginUser = document.getElementById('login-user');
 const loginPass = document.getElementById('login-pass');
@@ -87,7 +91,7 @@ const loginResult = document.getElementById('login-result');
 const adminPage = document.getElementById('admin-page');
 const managerPage = document.getElementById('manager-page');
 
-// 페이지 로드 시 URL 파라미터 체크 (manager)
+
 window.addEventListener('DOMContentLoaded', function() {
   const params = new URLSearchParams(window.location.search);
   if (params.has('manager') && params.get('manager') === 'true') {
@@ -95,10 +99,9 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 로그인 폼 제출 처리
+
 loginForm.addEventListener('submit', function(e) {
   e.preventDefault();
-  // SQL Injection 예시: id: 아무거나, pw: ' OR 1=1 --
   if (loginPass.value.trim() === "' OR 1=1 --" || loginUser.value.trim() === "' OR 1=1 --") {
     showSection('admin');
   } else {
@@ -106,7 +109,7 @@ loginForm.addEventListener('submit', function(e) {
   }
 });
 
-// 섹션 전환 함수
+
 function showSection(type) {
   adminPage.style.display = 'none';
   managerPage.style.display = 'none';
