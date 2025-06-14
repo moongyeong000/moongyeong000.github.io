@@ -4,6 +4,7 @@ const attackData = {
     displayCode: `&lt;script&gt;alert('XSS')&lt;/script&gt;`,
     desc: `XSS(Cross Site Scripting)는 사용자의 입력값이 필터링 없이 웹페이지에 출력되어, 악의적인 스크립트가 실행되는 취약점입니다.<br>
     <b>예시 코드:</b> <code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code><br>
+    이를 통해 세션 탈취, 피싱, 악성코드 배포, UI 변조 등 다양한 공격이 가능합니다.<br>
     <b>대응 방안:</b> 입력값 필터링, 출력 시 이스케이프 처리, CSP 적용 등`
   },
   '시스템 명령어 삽입': {
@@ -11,6 +12,7 @@ const attackData = {
     displayCode: `; ls -al`,
     desc: `시스템 명령어 삽입은 입력값이 서버의 명령어로 실행되어 시스템 제어가 가능한 취약점입니다.<br>
     <b>예시 코드:</b> <code>; ls -al</code><br>
+    이를 통해 서버 파일 목록 확인, 파일 삭제, 악성코드 다운로드 등 심각한 시스템 침해가 가능합니다.<br>
     <b>대응 방안:</b> 입력값 검증, 쉘 명령어 직접 실행 금지, 최소 권한 원칙 적용 등`
   },
   '검색 최적화 조작': {
