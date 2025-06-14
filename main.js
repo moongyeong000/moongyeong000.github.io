@@ -2,9 +2,9 @@ document.getElementById('toggle-motivation').addEventListener('click', function(
   const moti = document.getElementById('motivation');
   if (moti.style.display === 'none') {
     moti.style.display = 'block';
-    this.textContent = 'tmi 접기';
+    this.textContent = '간략히';
   } else {
     moti.style.display = 'none';
-    this.textContent = 'tmi 보기';
+    this.textContent = '자세히';
   }
 });
