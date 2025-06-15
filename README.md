@@ -20,7 +20,7 @@ https://moongyeong000.github.io/
 ## 기능 목록
 
 |기능 제목|설명|코드 위치|코드 설명|
-|-----------------------------------|
+|---------|-----|---------|---------|
 | 자기소개/희망 직무 토글 | 자기소개 및 희망 직무를 버튼으로 열고 닫을 수 있음 | index.html:16, main.js:1| #toggle-motivation 버튼 클릭 시 #motivation 영역을 show/hide, 버튼 텍스트 변경|
 | 공격법 검색/실습 기능| XSS, 시스템 명령어 삽입, 검색 최적화 조작 등 주요 공격 기법을 검색/코드 입력/설명 제공 | practice.html:16, practice.js:1| #attack-search 섹션, 입력값에 따라 복붙 코드/공격 원리/대응 방안 안내 |
 | 로그인(SQL Injection) 실습 | SQL Injection 원리를 이용해 인증 우회 실습 가능 | practice.html:36, practice.js:34| 로그인 폼에 `' OR 1=1 --` 입력 시 SQL 쿼리의 인증 조건이 항상 참이 되어 관리자 페이지로 이동 |
