@@ -35,4 +35,4 @@ https://moongyeong000.github.io/
   - 모든 UI와 스타일을 직접 코딩함
 
 
-  - <details>와 <summary>를 사용해 프로젝트 리스트를 누르면 설명이 나옴
+  - `<details>`와 `<summary>`를 사용해 프로젝트 리스트를 누르면 설명이 나옴
