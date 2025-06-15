@@ -3,13 +3,11 @@
 
 저에 대한 소개와 현재 가지고 있는 스킬, 진행했거나 할 예정인 프로젝트들, 추가로 가장 간단한 공격 기법들을 시행해 보는 사이트가 있습니다.
 
-## GitHub 주소
-https://github.com/moongyeong000/moongyeong000.github.io
-
 ## 사이트 주소
 https://moongyeong000.github.io/
 
 ## 프로젝트 구조
+```
 /
 ├── index.html           # 메인 이력/포트폴리오 페이지
 ├── practice.html        # 실습형 웹페이지
@@ -17,7 +15,7 @@ https://moongyeong000.github.io/
 ├── main.js              # index.html용 JS
 ├── practice.js          # practice.html용 JS
 └── README.md            # 프로젝트 설명 및 기능 명세
-
+```
 
 ## 기능 목록
 
